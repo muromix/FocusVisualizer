@@ -72,13 +72,8 @@ This project is licensed under the **[MIT License](LICENSE)**. We believe in the
 
 ## 📥 Getting Started | はじめに / 技術的な詳細
 
-- **[Installation & Download](RELEASE_Mac_Win.md)**: Jump to the latest binary downloads.
+- **[Installation & Download](https://github.com/muromix/FocusVisualizer/releases/latest)**: Jump to the latest binary downloads.
   **[ダウンロードと手順]**: 最新版のダウンロードはこちらから。
-- **[Technical Specification](Dev/Walkthrough/SPECIFICATION.md)**: Deep dive into the logic and security.
-  **[技術仕様書]**: ロジックやセキュリティの詳細は「真実のソース」を参照してください。
-- **[Technical README](README_TECHNICAL.md)**: Original guide with focus on technical workflow.
-  **[技術者向けREADME]**: 従来の技術的なセットアップガイドはこちら。
-
 ---
 
 
