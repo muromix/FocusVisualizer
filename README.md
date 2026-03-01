@@ -9,10 +9,10 @@
 
 ## 📥 How to Download / ダウンロード方法
 
-All installation packages (ZIP / DMG) are hosted in the **Releases** section.
+All installation packages (ZIP / DMG) are hosted in the **Releases** section.  
 すべてのインストールパッケージ（ZIP / DMGファイル）は **Releases** ページにて配布しています。
 
-👉 **[Go to Latest Release (最新のリリースへ)]([https://github.com/muromix/Focus-Visualizer-Alpha-Releases/releases/latest](https://github.com/muromix/FocusVisualizer/releases/latest))**
+👉 **[Go to Latest Release (最新のリリースへ)](https://github.com/muromix/FocusVisualizer/releases/latest)**
 
 * Click the link above or check the "Releases" section on the right sidebar of this page.
 
@@ -28,7 +28,7 @@ Focus Visualizer is a high-speed workflow utility for Sony photographers using A
 Lightroomで写真を選んだ瞬間、別ウィンドウでAF枠や瞳認識の位置を爆速で表示します。
 α7R Vを筆頭とするSony最新世代のカメラから引き出せる全ての「合焦情報」の可視化と、レーティングやフラグの「双方向同期」を可能にします。
 
-## 💻 Recommended Specs / 動作推奨環境
+## � Recommended Specs / 動作推奨環境
 
 - **OS**: macOS (Apple Silicon) OR Windows 10 / 11 (64bit)
 - **Adobe Lightroom Classic** (v12.0+)
@@ -76,7 +76,7 @@ In no event shall the developer be liable for any claim, damages, data loss, or 
 
 ## 🐞 Bug Reports & Feedback / 不具合報告・フィードバック
 
-If you encounter any unexpected behavior, please let us know via the **[Issues](https://github.com/muromix/Focus-Visualizer-Alpha-Releases/issues)** tab!
+If you encounter any unexpected behavior, please let us know via the **[Issues](https://github.com/muromix/FocusVisualizer/issues)** tab!
 ページ上部の **Issues** タブからバグ報告や改善要望をお寄せいただけると大変励みになります。
 
 ## ☕ Support the Project / 開発を応援する
@@ -89,4 +89,3 @@ Focus Visualizer is a labor of love for Sony Alpha users. If you find this tool 
 <br>
 
 *(c) 2026 muromix | Made with passion for Sony Alpha (and beyond).*
-
