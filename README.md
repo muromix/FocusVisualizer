@@ -64,13 +64,13 @@ As this is a Public Alpha release, please be aware of the following technical li
 
 ---
 
-## ⚖️ Disclaimer / 免責事項 (Please Read)
+## ⚖️ Disclaimer & License / 免責事項・ライセンス
 
-**This software is provided "as is", without warranty of any kind.**  
-In no event shall the developer be liable for any claim, damages, data loss, or other liability arising from the use of this software. Please use it at your own risk.
+- **License**: Forbidden unauthorized redistribution, resale, or sublicensing. Please see the [LICENSE](LICENSE) file for more information.
+- **Disclaimer**: This software is provided "as is", without warranty of any kind. Use at your own risk.
+- **ライセンス**: 本ソフトウェアの無断での再配布、転送、商用利用、転売、および再ライセンスを固く禁じます。詳細は [LICENSE](LICENSE) ファイルをご確認ください。
+- **免責事項**: 本ソフトウェアは「現状有姿」で提供され、いかなる保証も伴いません。ご利用は自己責任でお願いいたします。
 
-**本ソフトウェアは「現状有姿」で提供され、いかなる保証も伴いません。**  
-本ツールの使用によって生じたデータの破損、PCの不具合、その他直接的・間接的な損害等について、開発者は一切の責任を負いかねます。事前に動作確認の上、ご自身の責任（自己責任）においてご利用をお願いいたします。
 
 ---
 
