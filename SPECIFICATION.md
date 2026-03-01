@@ -5,7 +5,7 @@ Sonyのαシリーズ（a7R Vなど）で撮影されたRAW画像（ARW）から
 
 ### 公開リポジトリ (Official Repository)
 - **GitHub**: [https://github.com/muromix/FocusVisualizer](https://github.com/muromix/FocusVisualizer)
-- **Release Repository**: [https://github.com/muromix/Focus-Visualizer-Alpha-Releases](https://github.com/muromix/Focus-Visualizer-Alpha-Releases)
+- **Release Repository**: [[https://github.com/muromix/Focus-Visualizer-Alpha-Releases](https://github.com/muromix/Focus-Visualizer-Alpha-Releases](https://github.com/muromix/FocusVisualizer/releases/latest))
 
 
 ### 1.0 セッション初期化プロトコル (Session Initialization Protocol) - *CRITICAL*
