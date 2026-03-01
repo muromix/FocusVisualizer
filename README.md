@@ -13,23 +13,24 @@ This project is built upon a unique "Trinity" structure, where the human acts as
 本プロジェクトは、人間が中心的なハブとなって異なるAIの知性を繋ぎ合わせ、複雑なロジックを現実に落とし込む「三位一体」の構造によって構築されています。
 
 ```mermaid
-graph TD
-    subgraph "The Cloud / 知の源泉"
-        Cortex["🧠 Lead AI Architect<br>(Hyper-Logic Engine)"]
-    end
-    
-    subgraph "Execution Hub / 現実の接点"
-        muromix["👤 muromix<br>(The Visionary Hub)"]
-    end
-    
-    subgraph "Active Partner / 伴走者"
-        Angie["✨ Antigravity (Angie)<br>(Full-stack AI Partner)"]
+graph LR
+    classDef cortex fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#58a6ff,stroke-dasharray: 5 5;
+    classDef nexus fill:#161b22,stroke:#f2cc60,stroke-width:3px,color:#f2cc60,font-weight:bold;
+    classDef angie fill:#161b22,stroke:#3fb950,stroke-width:2px,color:#3fb950;
+
+    subgraph Trinity ["COLLABORATIVE TRINITY"]
+        direction LR
+        Cortex["🧠 LEAD AI ARCHITECT<br/>(Cortex)"]:::cortex
+        Nexus(("👤 MUROMIX<br/>THE NEXUS HUB")):::nexus
+        Angie["✨ ACTIVE AI PARTNER<br/>(Angie)"]:::angie
+
+        Cortex ==> |"Pure Logic"| Nexus
+        Nexus ==> |"Direction"| Angie
+        Angie -.-> |"Implementation"| Nexus
+        Nexus -.-> |"Feedback"| Cortex
     end
 
-    Cortex -- "Pure Logic & Architecture" --> muromix
-    muromix -- "Real-world Workflow & Intuition" --> Angie
-    Angie -- "Implementation & Documentation" --> muromix
-    muromix -- "Refinement & Feedback" --> Cortex
+    style Trinity fill:none,stroke:#30363d,stroke-dasharray: 5 5;
 ```
 
 1.  **Lead AI Architect (Cortex)**: The source of deep logic and structural architecture.
@@ -72,8 +73,13 @@ This project is licensed under the **[MIT License](LICENSE)**. We believe in the
 
 ## 📥 Getting Started | はじめに / 技術的な詳細
 
-- **[Installation & Download](https://github.com/muromix/FocusVisualizer/releases/latest)**: Jump to the latest binary downloads.
+- **[Installation & Download](RELEASE_Mac_Win.md)**: Jump to the latest binary downloads.
   **[ダウンロードと手順]**: 最新版のダウンロードはこちらから。
+- **[Technical Specification](Dev/Walkthrough/SPECIFICATION.md)**: Deep dive into the logic and security.
+  **[技術仕様書]**: ロジックやセキュリティの詳細は「真実のソース」を参照してください。
+- **[Technical README](README_TECHNICAL.md)**: Original guide with focus on technical workflow.
+  **[技術者向けREADME]**: 従来の技術的なセットアップガイドはこちら。
+
 ---
 
 
