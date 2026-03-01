@@ -1,24 +1,32 @@
-Focus Visualizer - License Agreements
-Focus Visualizer - 利用規約・ライセンス
+MIT License
 
-Copyright (c) 2026 muromix. All rights reserved.
+Copyright (c) 2026 muromix
 
-1. Grant of License / ライセンスの許諾
-This software is provided for personal, non-commercial use only.
-本ソフトウェアは、個人かつ非営利目的での利用に限定して提供されます。
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-2. Prohibitions / 禁止事項
-- Unauthorized redistribution, resale, or sublicensing of this software (including binary files and official assets) is strictly prohibited.
-- Modify and redistribute this software is prohibited.
-- Use this software for commercial purposes without prior written consent from the developer is prohibited.
-- 本ソフトウェア（バイナリ、公式アセットを含む）の無断再配布、転売、再ライセンスを行うことは固く禁じられています。
-- 本ソフトウェアを改変して再配布することを禁止します。
-- 開発者の事前の書面による同意なしに、本ソフトウェアを商用目的で利用することを禁止します。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-3. Disclaimer of Warranty / 免責事項
-THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE DEVELOPER BE LIABLE FOR ANY CLAIM, DAMAGES, DATA LOSS, OR OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
-本ソフトウェアは「現状有姿」で提供され、明示または黙示を問わず、いかなる保証も伴いません。本ソフトウェアの使用によって生じたデータの破損、PCの不具合、その他直接的・間接的な損害等について、開発者は一切の責任を負いかねます。事前に動作確認の上、ご自身の責任においてご利用ください。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-4. Third-Party Licenses / サードパーティ・ライセンス
-This software includes components licensed under other open-source licenses (ExifTool, Rawpy, Electron, etc.). Please check their respective license files for details.
-本ソフトウェアには、他のオープンソースライセンス（ExifTool, Rawpy, Electron等）の下で提供されているコンポーネントが含まれています。詳細はそれぞれのライセンスに基づきます。
+---------------------------------------------------------------------------
+Third-Party Licenses / サードパーティ・ライセンス
+---------------------------------------------------------------------------
+This software includes components licensed under other open-source licenses 
+(ExifTool, Rawpy, Electron, etc.). Please check their respective license 
+files or project documentation for details.
+
+本ソフトウェアには、他のオープンソースライセンス（ExifTool, Rawpy, Electron等）
+の下で提供されているコンポーネントが含まれています。詳細はそれぞれのライセンス
+に基づきます。
