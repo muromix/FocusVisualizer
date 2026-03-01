@@ -12,7 +12,7 @@
 All installation packages (ZIP / DMG) are hosted in the **Releases** section.
 すべてのインストールパッケージ（ZIP / DMGファイル）は **Releases** ページにて配布しています。
 
-👉 **[Go to Latest Release (最新のリリースへ)](https://github.com/muromix/Focus-Visualizer-Alpha-Releases/releases/latest)**
+👉 **[Go to Latest Release (最新のリリースへ)]([https://github.com/muromix/Focus-Visualizer-Alpha-Releases/releases/latest](https://github.com/muromix/FocusVisualizer/releases/latest))**
 
 * Click the link above or check the "Releases" section on the right sidebar of this page.
 
