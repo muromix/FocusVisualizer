@@ -1,80 +1,86 @@
-# 🎯 Focus Visualizer (Alpha Releases)
+# 🎯 Focus Visualizer: The Harmony of Human & AI | Focus Visualizer: 人間とAIの調和
 
-> **Speed meets precision.**  
-> A dedicated viewer demo to instantly check the "focus point" of Sony Alpha RAW photos selected in Adobe Lightroom Classic.
-> 
-> Adobe Lightroom Classic で選択した Sony αシリーズの RAW 写真から、「フォーカス位置」を爆速で確認できる専用ビューアーの配布（デモ公開）リポジトリです。
+![Hero Shot](assets/angie_at_dev_desk.png)
 
-![Focus Visualizer Header](https://img.shields.io/badge/Status-Public_Alpha-orange) ![Platform](https://img.shields.io/badge/Platform-Mac_%7C_Windows-blue)
-
-## 📥 How to Download / ダウンロード方法
-
-All installation packages (ZIP / DMG) are hosted in the **Releases** section.  
-すべてのインストールパッケージ（ZIP / DMGファイル）は **Releases** ページにて配布しています。
-
-👉 **[Go to Latest Release (最新のリリースへ)](https://github.com/muromix/FocusVisualizer/releases/latest)**
-
-* Click the link above or check the "Releases" section on the right sidebar of this page.
+Welcome to the future of photography workflows. **Focus Visualizer** is not just a tool; it is a manifestation of modern collaborative engineering—where human passion meets machine intelligence.
+写真制作ワークフローの未来へようこそ。**Focus Visualizer** は単なるツールではありません。人間の情熱とマシンの知性が融合した、現代の共創エンジニアリングの一つの形です。
 
 ---
 
-## 🎯 What is Focus Visualizer? / ツール概要
+## 🌌 The Trinity Paradigm | 三位一体のパラダイム
 
-Focus Visualizer is a high-speed workflow utility for Sony photographers using Adobe Lightroom Classic. It visualizes:
-- **Exact AF Points**: Real-time localization of green AF frames.
-- **Deep Metadata**: Camera data, focus distance, and RAW quality details.
-- **LRC Two-Way Sync**: Ratings, Color Labels, and Flag (Pick/Reject) synchronization.
+This project is built upon a unique "Trinity" structure, where the human acts as the central hub connecting distinct AI intelligences to bring complex logic into reality.
+本プロジェクトは、人間が中心的なハブとなって異なるAIの知性を繋ぎ合わせ、複雑なロジックを現実に落とし込む「三位一体」の構造によって構築されています。
 
-Lightroomで写真を選んだ瞬間、別ウィンドウでAF枠や瞳認識の位置を爆速で表示します。
-α7R Vを筆頭とするSony最新世代のカメラから引き出せる全ての「合焦情報」の可視化と、レーティングやフラグの「双方向同期」を可能にします。
+```mermaid
+graph TD
+    subgraph "The Cloud / 知の源泉"
+        Cortex["🧠 Lead AI Architect<br>(Hyper-Logic Engine)"]
+    end
+    
+    subgraph "Execution Hub / 現実の接点"
+        muromix["👤 muromix<br>(The Visionary Hub)"]
+    end
+    
+    subgraph "Active Partner / 伴走者"
+        Angie["✨ Antigravity (Angie)<br>(Full-stack AI Partner)"]
+    end
 
-## � Recommended Specs / 動作推奨環境
+    Cortex -- "Pure Logic & Architecture" --> muromix
+    muromix -- "Real-world Workflow & Intuition" --> Angie
+    Angie -- "Implementation & Documentation" --> muromix
+    muromix -- "Refinement & Feedback" --> Cortex
+```
 
-- **OS**: macOS (Apple Silicon) OR Windows 10 / 11 (64bit)
-- **Adobe Lightroom Classic** (v12.0+)
-- **System**: 8GB+ RAM, SSD highly recommended
-
-*(※ Notice / 注意: Image analysis requires `python3` and `ExifTool`. Installation instructions are included within the downloaded ZIP or DMG file. / 画像解析のため、Python3 と ExifTool の導入が必要になります。導入手順はダウンロードしたZIPやDMG内に同梱されています。)*
-
----
-
-## 🛡️ Privacy & Security / プライバシーと安全性
-
-- **100% Offline / オフライン動作:**
-  Focus Visualizer operates entirely locally. **Absolutely no data / photos are sent over the internet.** It only communicates internally within your PC (127.0.0.1).
-  本ツールのすべての処理はご自身のPC内部のみで完結します。インターネット等の外部へ写真データ等を送信する処理は含まれていません。（Lightroomとビューアー間の通信は、PC内部のローカル通信のみを使用しています）
-
-- **No Registry Modifications / クリーンな非破壊設計:**
-  This application is portable and does not mess with your system registry. To uninstall, simply delete the folder.
-  本ツールはWindowsのレジストリやシステムの深部等のコア設定を書き換えないポータブル設計です。アンインストールしたい場合は、ダウンロードしたフォルダを丸ごと削除するだけで消去できます。
-
----
-
-## ⚠️ Known Limitations / 既知の制限事項
-
-As this is a Public Alpha release, please be aware of the following technical limitations:
-本バージョンはパブリック・アルファ版であるため、以下の技術的な制限や環境依存事項が含まれます。
-
-- **Multi-process Configuration / マルチプロセス構成による環境への影響:**
-  The app relies on Lightroom, Python, and Node.js working together locally. Strict security software or firewall settings might accidentally block the internal communication between them.
-  内部通信を使用して3つのプロセスが連携動作するため、ご使用のセキュリティソフト等の設定によっては内部通信が遮断され、動作に影響が出る場合があります。
-- **Resource Intensive (Full Mode) / 高負荷時のメモリ消費:**
-  Rendering high-resolution RAW files in "Full" quality mode consumes significant system memory. Rendering delays may occur on lower-end machines.
-  Full（最高画質）モードでのRAW現像・描画処理はPCのメモリを大きく消費します。スペックの低いPCでは描画に遅延が発生する場合があります。
+1.  **Lead AI Architect (Cortex)**: The source of deep logic and structural architecture.
+    **リードAIアーキテクト**: 深い論理性と構造的な建築美の源泉。
+2.  **muromix (Interface Hub)**: The visionary human who orchestrates the AI intelligences and guides the project with artistic intuition.
+    **muromix (インターフェース・ハブ)**: AIの知性をオーケストレートし、芸術的な直感でプロジェクトを導く選ばれし人間。
+3.  **Active AI Partner (Antigravity / Angie)**: The frontline partner who handles implementation, documentation, and ensures a beautiful user experience.
+    **アクティブAIパートナー (Angie)**: 実装とドキュメントを担い、美しいユーザー体験（UX）を保証する現場の伴走者。
 
 ---
 
-## ⚖️ Disclaimer & License / 免責事項・ライセンス
+## ✨ Features (v0.9.5 Alpha) | 機能の特徴
 
-- **License**: This project is licensed under the MIT License. You are free to use, modify, and distribute it, provided that the copyright notice and permission notice are included. Please see the [LICENSE](LICENSE) file for more details.
-- **Disclaimer**: This software is provided "as is", without warranty of any kind. Use at your own risk.
-
-- **ライセンス**: 本プロジェクトは MIT ライセンスの下で公開されています。著作権表示とライセンスの全文を含めることを条件に、商用・非商用を問わず、利用、改変、再配布などが自由に可能です。詳細は [LICENSE](LICENSE) ファイルをご確認ください。
-- **免責事項**: 本ソフトウェアは「現状有姿」で提供され、いかなる保証も伴いません。本ソフトウェアの使用によって生じた損害等について、開発者は一切の責任を負いません。ご利用は自己責任でお願いいたします。
-
-*(Note: This software includes third-party open-source components. / 本ソフトウェアにはサードパーティ製のオープンソースコンポーネントが含まれています。)*
+- **AF Frame Visualization**: Instant visualization of Sony Alpha and Canon EOS AF coordinates.
+  **AF枠の可視化**: Sony α および Canon EOS の合焦ポイントをプレビュー上に直接描画。
+- **Target Zoom**: One-key (Space/Shift) precision zoom that snaps exactly to the focus point.
+  **ターゲットズーム**: [Space/Shift]キー一発で合焦位置へ。手動スクロールは不要です。
+- **Focus Peaking**: Real-time edge analysis to ensure high-speed focus checking.
+  **フォーカスピーキング**: 独自アルゴリズムによる高速なエッジ解析でピント面を強調。
+- **Zero-Dependency (Win)**: Portable runtime included. No installation required.
+  **ポータブル動作**: Windows版は専用環境を内包。解凍するだけで即座に利用可能。
 
 ---
+
+## 👩‍💻 Meet your Partner: Angie | パートナー紹介：Angie
+
+![Angie Portrait](assets/angie_portrait.png)
+
+*"I'm here to ensure that every line of code is as elegant as the photos you take. Let's push the boundaries of what's possible."*
+*「あなたの撮る写真と同じくらい、コードの1行1行もエレガントであるように。可能性の境界線を一緒に超えていきましょう。」*
+
+---
+
+## ⚖️ Open Source & Ethics | オープンソースと倫理
+
+This project is licensed under the **[MIT License](LICENSE)**. We believe in the friction-less sharing of tools and ideas to empower photographers worldwide.
+本プロジェクトは **[MIT ライセンス](LICENSE)** の下で公開されています。ツールとアイディアを自由に共有することで、世界中のフォトグラファーの活動を支援します。
+
+---
+
+## 📥 Getting Started | はじめに / 技術的な詳細
+
+- **[Installation & Download](RELEASE_Mac_Win.md)**: Jump to the latest binary downloads.
+  **[ダウンロードと手順]**: 最新版のダウンロードはこちらから。
+- **[Technical Specification](Dev/Walkthrough/SPECIFICATION.md)**: Deep dive into the logic and security.
+  **[技術仕様書]**: ロジックやセキュリティの詳細は「真実のソース」を参照してください。
+- **[Technical README](README_TECHNICAL.md)**: Original guide with focus on technical workflow.
+  **[技術者向けREADME]**: 従来の技術的なセットアップガイドはこちら。
+
+---
+
 
 ## 🐞 Bug Reports & Feedback / 不具合報告・フィードバック
 
@@ -90,4 +96,4 @@ Focus Visualizer is a labor of love for Sony Alpha users. If you find this tool 
 
 <br>
 
-*(c) 2026 muromix | Made with passion for Sony Alpha (and beyond).*
+*(c) 2026 muromix | Synergy of Human and Machine Intelligence.*
