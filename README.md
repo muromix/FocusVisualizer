@@ -63,7 +63,7 @@ This project is licensed under the **[MIT License](LICENSE)**. We believe in the
 ## 📥 Getting Started
 
 - **[Installation & Download](https://github.com/muromix/FocusVisualizer/releases/latest)**: Jump to the latest binary downloads.
-- **[Technical Specification](Dev/Walkthrough/SPECIFICATION.md)**: Deep dive into the logic and security.
+- **[Technical Specification](SPECIFICATION.md)**: Deep dive into the logic and security.
 - **[Technical README](README_TECHNICAL.md)**: Original guide with focus on technical workflow.
 
 ---
