@@ -66,11 +66,13 @@ As this is a Public Alpha release, please be aware of the following technical li
 
 ## ⚖️ Disclaimer & License / 免責事項・ライセンス
 
-- **License**: Forbidden unauthorized redistribution, resale, or sublicensing. Please see the [LICENSE](LICENSE) file for more information.
+- **License**: This project is licensed under the MIT License. You are free to use, modify, and distribute it, provided that the copyright notice and permission notice are included. Please see the [LICENSE](LICENSE) file for more details.
 - **Disclaimer**: This software is provided "as is", without warranty of any kind. Use at your own risk.
-- **ライセンス**: 本ソフトウェアの無断での再配布、転送、商用利用、転売、および再ライセンスを固く禁じます。詳細は [LICENSE](LICENSE) ファイルをご確認ください。
-- **免責事項**: 本ソフトウェアは「現状有姿」で提供され、いかなる保証も伴いません。ご利用は自己責任でお願いいたします。
 
+- **ライセンス**: 本プロジェクトは MIT ライセンスの下で公開されています。著作権表示とライセンスの全文を含めることを条件に、商用・非商用を問わず、利用、改変、再配布などが自由に可能です。詳細は [LICENSE](LICENSE) ファイルをご確認ください。
+- **免責事項**: 本ソフトウェアは「現状有姿」で提供され、いかなる保証も伴いません。本ソフトウェアの使用によって生じた損害等について、開発者は一切の責任を負いません。ご利用は自己責任でお願いいたします。
+
+*(Note: This software includes third-party open-source components. / 本ソフトウェアにはサードパーティ製のオープンソースコンポーネントが含まれています。)*
 
 ---
 
