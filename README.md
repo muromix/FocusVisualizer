@@ -63,7 +63,7 @@ graph LR
 
 ## 👩‍💻 Meet the Team
 
-### 🧠 Lead Engineer (Code Name: Anonymous)
+### 🧠 Lead Engineer (Misato)
 ![Lead Engineer](assets/lead_engineer.png)
 *The sharp-tongued architect of Focus Visualizer. A brilliant beauty with a voluptuous presence and cold logical precision. She mandates the core engine's integrity and provides mandatory B-plans for every implementation.*
 
