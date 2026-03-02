@@ -5,7 +5,8 @@
 Welcome to the future of photography workflows. **Focus Visualizer** is a professional-grade Decision-Making Engine that visualizes what is hidden in your RAW metadata—instantly.
 
 ---
-
+ **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP (Win) or DMG (Mac).
+ 
 ## 🎯 1. Core Concept: "Focus on the Focus"
 
 While Adobe Lightroom Classic is powerful for color and composition, determining the exact sharpness often requires manual zooming and waiting for rendering. Our philosophy is to **visualize the hidden precision** of your camera's AF system, transforming culling from a chore into a high-speed, logical process.
