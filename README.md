@@ -3,9 +3,8 @@
 ![Hero Shot](assets/004744.png)
 
 Welcome to the future of photography workflows. **Focus Visualizer** is a professional-grade Decision-Making Engine that visualizes what is hidden in your RAW metadata—instantly.
-
----
  **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP (Win) or DMG (Mac).
+---
  
 ## 🎯 1. Core Concept: "Focus on the Focus"
 
