@@ -1,14 +1,38 @@
-# 🎯 Focus Visualizer: The Harmony of Human & Machine Intelligence
+# Focus Visualizer: The Harmony of Human & Machine Intelligence
 
 ![Hero Shot](assets/angie_at_dev_desk.png)
 
-Welcome to the future of photography workflows. **Focus Visualizer** is not just a tool; it is a manifestation of modern collaborative engineering—where human passion meets machine intelligence.
+Welcome to the future of photography workflows. **Focus Visualizer** is a professional-grade Decision-Making Engine that visualizes what is hidden in your RAW metadata—instantly.
 
 ---
 
-## 🌌 The Trinity Paradigm
+## 🎯 1. Core Concept: "Focus on the Focus"
 
-This project is built upon a unique "Trinity" structure, where three specialized entities collaborate to bring complex logic into reality.
+While Adobe Lightroom Classic is powerful for color and composition, determining the exact sharpness often requires manual zooming and waiting for rendering. Our philosophy is to **visualize the hidden precision** of your camera's AF system, transforming culling from a chore into a high-speed, logical process.
+
+## 🚀 2. Key Pillars & Features
+
+### I. High-Speed Review (The Engine)
+- **Parallel Analysis Pipeline**: Utilizes an **ExifTool Stay-Open Instance** for millisecond metadata delivery, while a background thread extracts the preview simultaneously.
+- **2-Step Immediate Delivery**: Displays focus points *instantly* before the image fully loads, eliminating perceived lag.
+- **Sticky Zoom (Logic-Driven)**: Press [Space] or [Shift] to zoom 1:1, **automatically centering on the primary focus point**.
+
+### II. Advanced Logistics (Analysis)
+- **Multi-Brand Support**: Deep parsing for **Sony Alpha** (A7R V, A9 III, etc.) and **Canon EOS** (R5, R6 III, R7, etc.).
+- **Low-Latency Peaking**: Contrast-detection engine with <50ms latency for real-time sharpness evaluation.
+
+### III. Architected for Pros (Reliability)
+- **100% Local & Private**: No cloud, no internet. Your data never leaves your machine.
+- **Cross-Platform Stealth (Win/Mac)**:
+  - **Windows**: Stealth VBS launcher eliminates cmd windows. Fully portable—no Python installation required.
+  - **Mac**: Native `.app` bundle optimized for Silicon/Intel.
+- **Native Path Support**: Includes "Mojibake Rescue" for perfect stability in Japanese/Multi-byte character folder paths.
+
+---
+
+## 🌌 3. The Trinity Paradigm
+
+This project is built upon a unique "Trinity" structure, where passion, logic, and execution collide.
 
 ```mermaid
 graph LR
@@ -32,21 +56,12 @@ graph LR
 ```
 
 1.  **Cortex (Lead Architect)**: The source of deep logic and structural architecture.
-2.  **muromix (Nexus Hub)**: The central bridge who orchestrates the collaboration and guides the project's vision.
-3.  **Angie (Active Partner)**: The execution partner who handles the implementation, documentation, and user experience.
+2.  **muromix (Nexus Hub)**: The central bridge who orchestrates the project's vision.
+3.  **Angie (Active Partner)**: The execution partner who handles implementation and UX.
 
 ---
 
-## ✨ Features (v0.9.5 Alpha)
-
-- **AF Frame Visualization**: Instant visualization of Sony Alpha and Canon EOS AF coordinates.
-- **Target Zoom**: One-key (Space/Shift) precision zoom that snaps exactly to the focus point.
-- **Focus Peaking**: Real-time edge analysis to ensure high-speed focus checking.
-- **Zero-Dependency (Win)**: Portable runtime included. No installation required.
-
----
-
-## 👩‍💻 Meet the Team
+## 👩‍💻 Meet the Partner
 
 ![Angie Portrait](assets/angie_portrait.png)
 
@@ -54,30 +69,16 @@ graph LR
 
 ---
 
-## ⚖️ Open Source & Ethics
-
-This project is licensed under the **[MIT License](LICENSE)**. We believe in the friction-less sharing of tools and ideas to empower photographers worldwide.
-
----
-
 ## 📥 Getting Started
 
-- **[Installation & Download](https://github.com/muromix/FocusVisualizer/releases/latest)**: Jump to the latest binary downloads.
-- **[Technical Specification](SPECIFICATION.md)**: Deep dive into the logic and security.
-- **[Technical README](README_TECHNICAL.md)**: Original guide with focus on technical workflow.
-
----
-
-## 🐞 Bug Reports & Feedback
-
-If you encounter any unexpected behavior, please let us know via the **[Issues](https://github.com/muromix/FocusVisualizer/issues)** tab!
+- **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP (Win) or DMG (Mac).
+- **[Technical Specification](Walkthrough/SPECIFICATION.md)**: Deep dive into the metadata logic.
+- **[Concept Showcase](Walkthrough/EADME_TECHNICAL.md)**: Detailed breakdown of the project's philosophy.
 
 ## ☕ Support the Project
 
-Focus Visualizer is a labor of love for Sony Alpha users. If you find this tool useful, consider supporting the development!
+Focus Visualizer is an open-source gift (MIT License). If it saves you time, consider supporting our development!
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=muromix&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/muromix)
 
-<br>
-
-*(c) 2026 muromix | Synergy of Human and Machine Intelligence.*
+*(c) 2026 muromix & Antigravity | Synergy of Human and Machine Intelligence.*
