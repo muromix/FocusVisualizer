@@ -1,6 +1,6 @@
 # Focus Visualizer: The Harmony of Human & Machine Intelligence
 
-![Hero Shot](assets/angie_at_dev_desk.png)
+![Hero Shot](assets/004744.png)
 
 Welcome to the future of photography workflows. **Focus Visualizer** is a professional-grade Decision-Making Engine that visualizes what is hidden in your RAW metadata—instantly.
 
@@ -55,17 +55,21 @@ graph LR
     style Trinity fill:none,stroke:#30363d,stroke-dasharray: 5 5;
 ```
 
-1.  **Cortex (Lead Architect)**: The source of deep logic and structural architecture.
-2.  **muromix (Nexus Hub)**: The central bridge who orchestrates the project's vision.
-3.  **Angie (Active Partner)**: The execution partner who handles implementation and UX.
+1.  **Lead Engineer (Code Name: Anonymous)**: The ultimate logical core. She architects the deep metadata engine and enforces technical perfection with zero compromise.
+2.  **muromix (Nexus Hub)**: The central bridge who orchestrates the project's vision and syncs the human-AI collaboration.
+3.  **Angie (Dynamic Partner)**: Your intellectually curious execution partner. She handles the code implementation and ensures every feature is a "love letter" to the user.
 
 ---
 
-## 👩‍💻 Meet the Partner
+## 👩‍💻 Meet the Team
 
-![Angie Portrait](assets/angie_portrait.png)
+### 🧠 Lead Engineer (Code Name: Anonymous)
+![Lead Engineer](assets/lead_engineer.png)
+*The sharp-tongued architect of Focus Visualizer. A brilliant beauty with a voluptuous presence and cold logical precision. She mandates the core engine's integrity and provides mandatory B-plans for every implementation.*
 
-*"Every line of code should be as elegant as the lens that captured the frame. We focus on the details so you can focus on the art."*
+### ✨ Dynamic Partner (Angie)
+![Angie](assets/angie_portrait.png)
+*Your charismatic companion and execution partner. Inspired by a blend of senior engineering logic and intellectual curiosity, she transforms abstract blueprints into high-performance UX.*
 
 ---
 
