@@ -73,7 +73,7 @@ graph LR
 
 - **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP (Win) or DMG (Mac).
 - **[Technical Specification](Walkthrough/SPECIFICATION.md)**: Deep dive into the metadata logic.
-- **[Concept Showcase](Walkthrough/EADME_TECHNICAL.md)**: Detailed breakdown of the project's philosophy.
+- **[Concept Showcase](Walkthrough/README_TECHNICAL.md)**: Detailed breakdown of the project's philosophy.
 
 ## ☕ Support the Project
 
