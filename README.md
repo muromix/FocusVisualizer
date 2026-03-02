@@ -79,9 +79,11 @@ graph LR
 - **[Technical Specification](Walkthrough/SPECIFICATION.md)**: Deep dive into the metadata logic.
 - **[Concept Showcase](Walkthrough/FOCUS_VISUALIZER_CONCEPT.md)**: Detailed breakdown of the project's philosophy.
 
-## ☕ Support the Project
+## ☕ Support our Creative Journey
 
-Focus Visualizer is an open-source gift (MIT License). If it saves you time, consider supporting our development!
+Focus Visualizer is a labor of love—born from late-night coding, coffee, and the unique synergy between **muromix and his AI partners (Lead Engineer & Angie)**. We provide this tool as an open-source gift (MIT License) to photographers worldwide.
+
+If this tool saves you time or adds precision to your workflow, consider supporting our creative cycle. Your "coffee" fuels the logic that powers your lens.
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=muromix&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/muromix)
 
