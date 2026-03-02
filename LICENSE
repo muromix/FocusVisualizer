@@ -20,13 +20,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----------------------------------------------------------------------------
-Third-Party Licenses / サードパーティ・ライセンス
----------------------------------------------------------------------------
-This software includes components licensed under other open-source licenses 
-(ExifTool, Rawpy, Electron, etc.). Please check their respective license 
-files or project documentation for details.
+===========================================================================
+THIRD PARTY COMPONENTS
+===========================================================================
+This software includes the following third-party components:
 
-本ソフトウェアには、他のオープンソースライセンス（ExifTool, Rawpy, Electron等）
-の下で提供されているコンポーネントが含まれています。詳細はそれぞれのライセンス
-に基づきます。
+1. ExifTool by Phil Harvey (https://exiftool.org/)
+   - License: Perl Artistic License / GPL
+   - Used for extracting metadata from image files
+
+2. Python (https://www.python.org/)
+   - License: Python Software Foundation (PSF) License
+   - This application includes a portable Python runtime for backend processing.
+
+3. Electron (https://www.electronjs.org/)
+   - License: MIT License
+   - Used as the application framework
+
+4. Node.js packages (see package.json for full list)
+   - Various licenses (MIT, Apache 2.0, BSD, etc.)
+   - All compatible with MIT License distribution
