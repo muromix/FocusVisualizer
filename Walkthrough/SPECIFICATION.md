@@ -143,7 +143,7 @@ Electronの最新ベストプラクティスに基づき、レンダラープロ
     - `type: "update"` → 画像データの更新をビューアーへ通知
     - `type: "show"` → ビューアーウィンドウの前面表示を要求
     - `EventSource` により Chrome レンダラーが Flask へ直接購読。Electron IPC を中継しない低レイテンシ設計。
-*   **診断・ログ**: **[ログ出力箇所一覧](./BACKEND_PYTHON_SPECIFICATION.md#diagnostics-logging)** を参照。
+*   **診断・ログ**: **[ログ出力箇所一覧](BACKEND_PYTHON_SPECIFICATION.md#diagnostics-logging)** を参照。
 
 ### 5.1 Focus Visualizer V2 (同期アーキテクチャ) - *2026/02/17 新規*
 ViewerとLightroom間の超高速・高信頼性同期を実現するアーキテクチャです。
