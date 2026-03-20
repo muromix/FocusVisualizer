@@ -1,132 +1,121 @@
 # Focus Visualizer - Master Specification (English)
 
 ## 1. Application Overview
-A full-stack viewer that extracts metadata (focus position, model info, etc.) from RAW images (ARW) captured with Sony Alpha series (like a7R V), providing high-precision visualization while maintaining real-time synchronization with Lightroom.
+A high-performance full-stack viewer that extracts metadata (focus position, model info, etc.) from Sony Alpha (e.g., A7R V) and Canon EOS (e.g., R5, R6 III) RAW images, visualizing it with high precision while maintaining real-time synchronization with Adobe Lightroom Classic.
 
 ### Official Repository
 - **GitHub**: [https://github.com/muromix/FocusVisualizer](https://github.com/muromix/FocusVisualizer)
 - **Release Repository**: [https://github.com/muromix/FocusVisualizer/releases/latest](https://github.com/muromix/FocusVisualizer/releases/latest)
 
 ### License
-- **MIT License**: This project is released under the MIT License. Free use, modification, and redistribution are allowed for both commercial and non-commercial purposes, provided the copyright notice and disclaimer are retained.
-- **LICENSE**: Refer to `LICENSE.txt` in the project root for details.
+- **MIT License**: This project is licensed under the MIT License. Free for commercial and non-commercial use, modification, and redistribution, provided the copyright notice and disclaimer are retained.
+- **LICENSE**: Refer to [../LICENSE](../LICENSE) in the project root.
 
-### 1.0 Session Initialization Protocol - *CRITICAL*
-At the start of a session, the AI must prioritize reading the following files as the "Source of Truth":
-1.  **`DevStory/index.md`**: Overall progress history.
-2.  **`DevStory/README.md`**: Philosophy and structure of the dev story.
-3.  **`./SPECIFICATION.md`**: This document (Master Specification).
-4.  **Latest report in `DevStory/` folder**: Most recent tasks and issues.
-5.  **`./METADATA_SCHEMA.md`**: Definition of **UIMS v1.0 (Common Language)**.
-6.  **`./BACKEND_MODULARIZATION_PROMPT.md`**: Blueprint for backend refactoring.
-7.  **`Dev/_repomix_all_packs/`**: Sync source code of the entire project.
+### Secure IPC Foundation
+Based on modern Electron best practices:
+1.  **Context Isolation**: Secure bridge between `renderer.js` and Node.js API to prevent global namespace pollution.
+2.  **Preload Bridge**: Only trusted APIs exposed via `window.api`.
+3.  **System Lock**: Direct file writes are prohibited from the renderer; handled proxy-style by the main process via IPC.
+4.  **CSP**: Strictly limited to local server (127.0.0.1) requests to prevent unexpected external communication.
 
-### 1.1 Secure IPC Foundation - *Introduced 2026/02/23*
-Minimizing renderer process privileges based on Electron's latest best practices.
-1.  **Context Isolation**: Blocks renderer (`renderer.js`) from direct access to Node.js/Electron APIs.
-2.  **Preload Bridge**: Exposes only trusted APIs via `window.api` in `preload.js`.
-    - `window.api.send / on / invoke`: Intermediates only allowed IPC channels.
-    - `window.api.path`: Executes system path operations safely on the main process side.
-3.  **File System Control**: Abolishes direct file writing (`fs.writeFileSync`) from the renderer.
-4.  **CSP (Content Security Policy)**: Restricts requests to the internal server (127.0.0.1) only.
+---
 
 ## 2. System Architecture
-Refer to individual documents for detailed technical specifications.
+Please refer to individual documents for detailed technical specs.
 
-*   **[Lightroom Plugin (Lua)](../1.Plugin_for_Lightroom)**: Monitors photo selection events.
-*   **[Python Backend](../3.Python_Backend)**: **[Technical Detail](./BACKEND_PYTHON_SPECIFICATION.md)** - Type-safe analysis based on Pydantic v2 & UIMS v1.0.
-*   **[Focus Point Viewer (UI)](../2.Viewer_App)**: **[UI Detail](./UI_SPECIFICATION.md)** - Preview display and AF frame rendering.
+*   **[Lightroom Plugin (Lua)](../1.Plugin)**: Event monitoring and sync.
+*   **[Python Backend](../3.Python_Backend)**: **[Technical Docs](./BACKEND_PYTHON_SPECIFICATION.md)** - Pydantic v2 & UIMS v1.0.
+*   **[Focus Point Viewer (UI)](../2.Viewer)**: **[Technical Docs](./UI_SPECIFICATION.md)** - Canvas rendering.
+*   **[4-Layer Metadata Fortress](./METADATA_FORTRESS_ARCHITECTURE.md)**: Architectural design for governing asynchronous consistency.
 
 **Platform**: Windows / macOS
 - **Backend**: Python (Flask) - Modular Service Architecture (DI)
 - **Frontend**: Electron (High-speed Canvas rendering)
-- **Communication**: HTTP + SSE (Strictly bound to 127.0.0.1)
+- **Communication**: HTTP + SSE (127.0.0.1 bound)
 
 ### 🔐 Security & Privacy
-- **Offline by Design**: Strictly for local use. No communication with external servers.
-- **Host-Only Binding**: All internal communication restricted to `127.0.0.1` (localhost).
-- **No Data Collection**: No image data or personal information is collected.
-- **License**: MIT License.
-
-### 2.1 Supported Platforms - *Updated 2026/03/01*
-| OS | Backend | ExifTool | Launch Method | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Windows 10/11** | **Portable Python (Bundled)** | Vendor Bundled | **`Launcher.vbs` (Stealth)** | ✅ **Industrial Grade (v0.9.5_Alpha)** |
-| **macOS** | **focus_backend (onedir)** | **System Priority** | **Focus Visualizer.app** | ✅ **Full Support (v0.9.5_Alpha)** |
+- **Offline by Design**: This app is strictly for local use. No cloud processing.
+- **Host-Only Binding**: Internal sync via `127.0.0.1` (localhost) only.
+- **No Data Collection**: No image data or personal info is collected.
 
 ---
 
 ## 3. Main Features
 
 ### 📸 Focus Visualization & Analysis
-*   **High-Speed Display**: Under 0.3s display speed for RAW images via embedded preview extraction.
-*   **Focus Visualization**: Green AF frames, tracking status (a7R V), and subject recognition (Eye/Face).
-*   **Focus Peaking**: Visualizes focus areas with dots. Automatic sensitivity adjustment based on Quality Mode.
-*   **Shutter Speed Precision**: Prioritizes camera setting values (e.g., 1/40) over effective exposure time.
-*   **File Quality**: Analyzes and displays RAW compression formats and sizes from Exif.
-*   **Japanese Path Support (Mojibake Rescue)**: Automatically repairs charset issues on Windows.
+*   **High Speed**: RAW image preview in under 0.3s.
+*   **AF Coordinates**: Renders green AF boxes and tracking states.
+    - *(Sony AI Recognition / Tag9401 parsing is currently paused for further refinement)*
+*   **Focus Peaking**: Contrast-detection based real-time peaking. 50ms latency.
+*   **Mojibake Rescue**: Native handling for non-ASCII (Japanese) file paths on Windows.
 
 ### 🔄 Lightroom Sync
-*   **Bi-directional Navigation**: Instant sync of photo navigation between the viewer and Lightroom.
-*   **Rating & Label Sync**: Immediate application of ratings, color labels, and flags to Lightroom.
+*   **Two-Way Sync**: Instant reflection of ratings (0-5), color labels (6-9), and flags (Pick/Reject).
 
-### 💎 Quality Mode - *Updated 2026/02/23*
-| Mode | Resolution | Characteristics | Behavior |
+### 💎 Quality Control
+| Mode | Resolution | Characteristics | Default Status |
 | :--- | :--- | :--- | :--- |
-| **Speed** | 1600px | **Ultra-Fast & Simple** | **Default**. 40ms throttle for snappy operation. |
-| **Full** | Original | Ultimate Focus Check | **Auto-zoom to focus point** at 100% scale upon switching. |
+| **Speed** | 1600px | **Fast & Smooth** | **Default for both Full/Lite** |
+| **Full** | Original | Precision culling | Manual / Q-key only |
+
+*   **Lite Mode Optimization**: Previously, Lite mode loaded Full quality automatically. Now, it defaults to **Speed Mode** to prioritize rapid navigation and snacky UX during the initial culling phase.
 
 ---
 
-## 4. Keyboard & Mouse Interaction
+## 4. Core Philosophy: Selection Specialized - *Defined 2026/03/05*
+This project does not aim to be a generic image editor. It is a specialized professional tool for **"Culling" (selecting the best shots at record speed).**
 
-### 4.1 Keyboard Shortcuts
-| Key | Category | Action |
-| :--- | :--- | :--- |
-| `Space` / `Shift` | Zoom | **Precision Target Zoom** (100% ↔ Fit) |
-| `←` / `→` | Nav | Photo Navigation (Previous / Next) |
-| `Q` | Quality | Quality Mode Toggle (Speed ↔ Full) |
-| `L` | Quality | Quality Lock (Manual override) |
-| `P` | Tool | **Peaking** ON/OFF |
-| `+` / `-` / `↑` / `↓` | Tool | Peaking Sensitivity Adjustment |
-| `F` | Display | Focus Frame Toggle |
-| `I` | Display | Layout Cycle (Wide ➔ Mid ➔ Compact) |
-| `A` / `X` / `U` | Sync | Flagging (Pick / Reject / Unflag) |
-| `1` - `5` | Sync | Rating Setting (1-5 Stars) |
-| `6` - `9` / `0` | Sync | Color Label Setting |
+1.  **"True Development" Path**: 
+    We intentionally do not replicate secondary edits like Lightroom's manual crops or exposure compensation. Instead, we perform "Pure Development" (rawpy) to ensure 100% coordinate precision between maker metadata and pixels.
+2.  **Cognitive Decision Support**: 
+    Beyond just displaying an image, we visualize AF states (eyes, face, tracking) to help users make "instant, confident" decisions.
+3.  **Independence & Agility**: 
+    We bypass Lightroom's heavy preview generation, using our own high-speed extraction engine to accelerate the culling workflow.
 
 ---
 
-## 5. Technical Details & Communication
-*   **HTTP (Port 8765〜)**: Command and data communication.
-*   **SSE `/stream` (HTTP)**: Real-time push notifications from backend to frontend.
+## 5. Keyboard Shortcuts
+| Key | Action |
+| :--- | :--- |
+| `Space` | **Precision Target Zoom** (1:1 ↔ Fit) |
+| `←` / `→` | Image Navigation (LRC Linked) |
+| `Q` | Quality Mode Toggle |
+| `L` | Quality Lock |
+| `P` | **Peaking** ON/OFF |
+| `A` / `X` / `U` | Flagging (Pick / Reject / Unflag) |
+| `1` - `5` | Set Ratings |
 
 ---
 
-## 6. Coordinate Transformation
-1.  **Raw Coordinates (1000-based)**: Normalized coordinates from 0 to 1000.
-2.  **Preview Coordinates**: Mapping to the image's physical size (with Orientation).
-3.  **Canvas Coordinates**: Final conversion to the display size (Fit / Zoom).
+## 9. Changelog Highlights
+- **2026/03/13**: **"4-Layer Metadata Fortress (Metadata Persistence Mastery)"**
+  - **Metadata Immutability**: Solved the "vanishing ratings" bug during quality switches or browser reloads.
+  - **4-Tier Defense**: Implemented a coordinated architecture (Heartbeat Guard, Action Guard, Injection Guard, and Authority Guard) to govern asynchronous race conditions.
+  - **Metadata Sync Back-Channel**: Developed `request_metadata` logic via SSE for automatic recovery when backend state is stale.
+  - **AI Strategy Orchestration**: Established a zero-cost "Dual-Brain" workflow using Web-based Gemini and latest Gemini 2.5/3.1 SDKs.
+- **2026/03/11**: **"Solid Frame Navigation & Portrait Orientation Unification"**
+  - **One-at-a-Time Navigation**: Implemented render-gated navigation. Arrow keys are now blocked until the current image is fully rendered, eliminating race conditions and wasted resources during rapid switching.
+  - **EXIF Stripping (All Paths)**: Unified `_strip_exif_marker()` across ALL preview extraction paths (ExifTool embedded, rawpy FULL, DNG balanced). Portrait images now display correctly at every quality level.
+  - **Cache Path Bug Fix**: Fixed SSE push missing `data.path` on cache-hit responses, which caused the frontend to silently skip valid image update events.
+  - **Planned: Browsing Mode (Phase 1-3)**: A new `isBrowsingMode` detection system (280ms threshold) is planned. During rapid key-hold, only SPEED preview renders. On pause, FULL quality upgrades silently.
+
+- **2026/03/06**: **"Flipbook Paging & Turbo Shift (Extreme Speed Optimization)"**
+  - **Flipbook Navigation**: Implemented "Smart Catch-up" logic. If the processing queue builds up (> 2), it automatically skips to the latest request for zero-latency response.
+  - **Metadata Debouncing**: Introduced a 100ms settle delay for ExifTool analysis to prevent CPU spikes during rapid navigation.
+  - **Launcher Reliability**: Batch launchers are now non-blocking (`start` command) to prevent Lightroom freezes. Added UTF-8 logging to `Logs/launcher_debug.txt`.
+
+- **2026/03/05**: **"The AI Captured & Snappy Update (AI Research Phase)"**
+  - **Sony AI Recognition Research**: Experimental binary parsing for `Sony:Tag9401` and SubjectRecognition logic (currently under further research/refinement).
+  - **AI Visual Overlay**: Prototyped white frames for AI-tracked subjects.
+  - **Zero-Flicker Architecture**: Implemented a 300ms metadata wait-loop to eliminate vertical rotation flickering.
+  - **Lite Mode Speed Boost**: Defaulted initial quality to "Speed" (1600px) for rapid navigation.
+
+- **2026/03/02**: **"The Open Wings"** (Open Source Transition)
+  - **MIT License**: Migrated to open source for better community synergy.
+  - **Payload Reduction (158MB)**: Fixed recursive build bug (mirror-in-mirror).
+  - **Mac Launch Boost**: `--onedir` migration for faster backend startup.
 
 ---
 
-## 7. UI/UX Design Specification
-"Side View" optimized for mobile environments (e.g., 13-inch MacBook Pro).
-- **Intelligent Auto-Resize**: 3-step layout [Wide / Mid / Compact].
-- **Placement**: Snaps to the right edge of the primary screen.
-
----
-
-## 8. Deployment & Sync Protocol
-Strict management of assets when syncing from the development environment (`Dev/`) to the distribution environment (`dist/`).
-
----
-
-## 9. Changelog
-- **2026/03/02**: **"The Open Wings"** (Migration to MIT License, extreme build optimization)
-- **2026/03/01**: **"v0.9.5 Alpha: Zero-Friction Milestone"** (Portable Python, VBS Stealth Launcher)
-
----
-
-**Created by muromix with Lead Engineer & Angie**
+**Created by muromix with Angie**
 "Code is the ultimate love letter to our future selves."
