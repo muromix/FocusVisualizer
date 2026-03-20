@@ -1,64 +1,65 @@
-# Focus Visualizer - インストールと設定ガイド
+# Focus Visualizer - インストールと設定ガイド (v0.9.8 Alpha)
 
-このドキュメントは、Adobe Lightroom Classic用「Focus Visualizer」のセットアップ手順書です。リリース時のReadmeテキストの生成ベースとして使用されます。
+**Created by muromix & Angie**
 
-## 1. システム要件 (準備)
+このドキュメントは、Adobe Lightroom Classic (LRC) 用「Focus Visualizer」のセットアップ手順書です。
+v0.9.8 "SUPER SLIM" 版の最新ロジックを反映しています。
 
-Focus Visualizer の動作には以下の環境が必要です。
+---
 
-### Windows をお使いの方
+## 🚀 1. システム要件 (準備)
+
+本バージョンは、**Windows においては Python や Node.js の事前インストールが不要** な「ポータブル版」として開発されています。
+
+### 🪟 Windows をお使いの方
 - **OS**: Windows 10 / 11 (64bit)
-- **Python**: バージョン 3.10 以上 (PCにインストールされている必要があります)
-- **Lightroom Classic**: v12.0以上推奨
-- **メモリ**: 8GB 以上 (16GB以上推奨)
+- **依存環境**: 不要（全てパッケージに内蔵されています）
+- **Lightroom Classic**: v12.0 以上推奨
 
-### Mac をお使いの方
+### 🍎 Mac をお使いの方
 - **OS**: macOS 12.0 (Monterey) 以上推奨
-- **Node.js**: v18 LTS 以上推奨 ([ダウンロード](https://nodejs.org/))
-- **Python**: バージョン 3.10 以上推奨 (`setup_mac.command` が自動確認します)
-- **ExifTool / Homebrew**: 未導入の場合も `setup_mac.command` が自動インストールします
+- **最新状況**: 現在、Mac 版は **v0.9.5 Alpha** です（v0.9.8 相当へのアップデートは後日予定）。
 
 ---
 
-## 2. 設置と起動
+## 📦 2. セットアップ手順 (Windows)
 
-### 🪟 Windows の場合
+Windows 版は「解凍して置くだけ」で準備が完了します。
 
-1. ダウンロードした「Focus_Visualizer」フォルダを任意の場所に配置します。
-2. フォルダ直下の **`setup_win.bat`** をダブルクリックして実行します。
-   （Pythonの仮想環境の構築と、必要なライブラリの自動インストールが行われます）
-
-### 🍎 Mac の場合
-
-1. フォルダ直下の **`setup_mac.command`** をダブルクリックして実行します。
-   *（セキュリティ警告が出た場合: 右クリック → [開く] → [開く]）*
-2. スクリプトは以下を自動で実行します：
-   - Homebrew の確認・インストール
-   - ExifTool の自動インストール
-   - UI依存パッケージのインストール (`npm install`)
-   - Python 仮想環境の作成とライブラリ展開
-   - 実行権限の自動付与
-3. 「🎉 Setup Complete!」と表示されたら準備完了です。
+1. ダウンロードした ZIP ファイルを、任意の場所に解凍（展開）します。
+2. フォルダを配置したら、Lightroom Classic を起動してください。
+3. **[ファイル] ＞ [プラグインマネージャー]** を開きます。
+4. **[追加]** ボタンをクリックし、同梱されている **`1.Plugin_for_Lightroom`** フォルダを選択します。
+5. 緑色の丸が表示され「プラグインは有効です」となれば完了です。
 
 ---
 
-## 3. Lightroom Classic へのプラグイン登録設定
+## 🎯 3. 起動方法 (LRC から起動)
 
-この設定はWindows・Mac共通です。
+本ツールは、Lightroom Classic 内から直接メニューを呼び出すことで、ビューアーが自動的に立ち上がります。
 
-1. Lightroomを開き、**[ファイル] ＞ [プラグインマネージャー]** を選択します。
-2. **[追加]** ボタンをクリックし、同梱されている `1.Plugin/Focus_Visualizer.lrplugin` フォルダを選択します。
-3. 登録が完了すれば準備OKです！ 写真を選択して **[ファイル] -> [プラグインエクストラ] -> [Focus Visualizer for Sony Alpha]** を実行するだけで、全自動で起動します。
+1. Lightroom Classic のライブラリモジュール等で、写真を選択します。
+2. **[ファイル] ＞ [プラグインエクストラ] ＞ [Focus Visualizer for Sony Alpha]** をクリックします。
+3. ビューアーが自動的に立ち上がり、写真の合焦位置を可視化します。
 
 ---
 
-## 4. アンインストール
+## 🛠️ 4. メンテナンスとトラブルシューティング
 
-本アプリケーションはレジストリ等のシステム設定を変更しません。安全にアンインストールするには以下の手順を実行してください。
+- **統合ログ (`Logs/`)**: 
+  バックエンド、Electron、Lightroomプラグインの全ての動作ログが、ルート直下の **`Logs/`** フォルダに出力されます。不具合が発生した際はこの中のファイルを確認してください。
+- **ポータブル設計**: 
+  レジストリ等のシステム設定は書き換えません。アンインストール時は、プラグインマネージャーから削除し、フォルダごとゴミ箱へ捨てるだけで安全に削除できます。
 
-1. Lightroom Classic を開き、[プラグインマネージャー] から「Focus Visualizer for Sony Alpha」を選択し、[削除] をクリックします。
-2. 配置したこのアプリケーションフォルダごと「削除（ゴミ箱へ移動）」してください。
-3. Python や Node.js 自体が不要になった場合は、OSのシステム設定から手動でアンインストールしてください。
+---
+
+## ☕ 開発を応援する
+
+Focus Visualizer は、写真家のワークフローを劇的に加速させるためのオープンソースプロジェクトです。
+もしこのツールがあなたの助けになったら、開発継続へのサポートをお願いします！
+
+- **[BOOTHで支援する (Angie's Lab)](https://angieslab.booth.pm/)**
+- **[Buy Me a Coffee で支援する](https://buymeacoffee.com/muromix)**
 
 ---
 *Focus Visualizer - Developed by muromix & Angie.*

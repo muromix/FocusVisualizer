@@ -1,62 +1,65 @@
-# Focus Visualizer - Installation & Setup Guide
+# Focus Visualizer - Installation & Setup Guide (v0.9.8 Alpha)
 
-This document provides instructions for installing and setting up Focus Visualizer for Adobe Lightroom Classic.
+**Created by muromix & Angie**
 
-## 1. System Requirements
+This document provides instructions for installing and setting up Focus Visualizer for Adobe Lightroom Classic (LRC).
+Updated for the **v0.9.8 "SUPER SLIM"** release.
 
-### For Windows Users
+---
+
+## 🚀 1. System Requirements
+
+The Windows version is now a **strictly portable product**—no separate installation of Python or Node.js is required.
+
+### 🪟 For Windows Users
 - **OS**: Windows 10 / 11 (64bit)
-- **Python**: Version 3.10 or higher (Must be installed on your system)
+- **Dependencies**: None (All runtimes are bundled in the package)
 - **Lightroom Classic**: v12.0 or higher recommended
-- **Memory**: 8GB+ (16GB+ recommended)
 
-### For Mac Users
+### 🍎 For Mac Users
 - **OS**: macOS 12.0 (Monterey) or higher recommended
-- **Node.js**: v18 LTS or higher recommended ([Download](https://nodejs.org/))
-- **Python**: Version 3.10 or higher recommended (`setup_mac.command` will check this automatically)
-- **ExifTool / Homebrew**: Will be installed automatically by `setup_mac.command` if not present.
+- **Current Version**: Mac version is currently at **v0.9.5 Alpha** (v0.9.8 parity update coming soon).
 
 ---
 
-## 2. Installation & Setup
+## 📦 2. Setup Instructions (Windows)
 
-### 🪟 Windows Setup
+The Windows version is designed to be "unzip and run".
 
-1. Extract the downloaded `Focus_Visualizer` folder to a location of your choice.
-2. Double-click **`setup_win.bat`** located in the root folder.
-   *(This will automatically create a Python virtual environment and install required libraries).*
-
-### 🍎 Mac Setup
-
-1. Double-click **`setup_mac.command`** located in the root folder.
-   *(If you see a security warning: Right-click -> [Open] -> [Open])*
-2. The script will automatically perform the following:
-   - Check and install Homebrew
-   - Install ExifTool via brew
-   - Install UI dependencies (`npm install`)
-   - Create Python venv & install backend libraries
-   - Grant execution permissions
-3. Setup is complete when you see the message "🎉 Setup Complete!".
+1. Extract the downloaded ZIP archive to a location of your choice.
+2. Open **Adobe Lightroom Classic**.
+3. Go to **[File] ＞ [Plug-in Manager]**.
+4. Click the **[Add]** button and select the **`1.Plugin_for_Lightroom`** folder from the extracted directory.
+5. The status should show a green circle indicating the plug-in is active.
 
 ---
 
-## 3. Lightroom Classic Integration
+## 🎯 3. How to Launch (via LRC)
 
-This step is common for both Windows and Mac.
+Focus Visualizer is designed to be launched directly from within Lightroom Classic.
 
-1. Open Adobe Lightroom Classic, go to **[File] > [Plug-in Manager]**.
-2. Click the **[Add]** button and select the `1.Plugin/Focus_Visualizer.lrplugin` folder from the extracted directory.
-3. Once registered, the setup is complete! You can now launch it anytime by selecting a photo and going to **[File] > [Plug-in Extras] > [Focus Visualizer for Sony Alpha]**.
+1. Select one or more photos in the Library module.
+2. Go to **[File] ＞ [Plug-in Extras] ＞ [Focus Visualizer for Sony Alpha]**.
+3. The viewer application will launch automatically and visualize the focus points for the selected images.
 
 ---
 
-## 4. Uninstallation
+## 🛠️ 4. Maintenance & Troubleshooting
 
-This application does not modify your system registry or core settings. To uninstall safely:
+- **Unified Logging (`Logs/`)**: 
+  All system logs (Backend, Electron, and Lightroom Plugin) are consolidated into the **`Logs/`** directory at the project root for easier troubleshooting.
+- **Portability**: 
+  The application does not modify your system registry. To uninstall, simply remove it from the Lightroom Plug-in Manager and delete the application folder.
 
-1. Open Lightroom Classic, go to **[Plug-in Manager]**, select "Focus Visualizer for Sony Alpha", and click **[Remove]**.
-2. Delete the downloaded `Focus_Visualizer` folder (Move to Trash/Recycle Bin).
-3. If you no longer need Python or Node.js, you can manually uninstall them from your OS settings.
+---
+
+## ☕ Support the Project
+
+Focus Visualizer is a passion project built to accelerate the workflow of photographers.
+If this tool saves you time, please consider supporting our continued development:
+
+- **[Support via BOOTH (Angie's Lab)](https://angieslab.booth.pm/)**
+- **[Buy Me a Coffee](https://buymeacoffee.com/muromix)**
 
 ---
 *Focus Visualizer - Developed by muromix & Angie.*
