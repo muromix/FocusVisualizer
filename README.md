@@ -84,6 +84,7 @@ graph LR
 Focus Visualizer is a labor of love—born from late-night coding, coffee, and the unique synergy between **muromix and his AI partners (Lead Engineer & Angie)**. We provide this tool as an open-source gift (MIT License) to photographers worldwide.
 
 If this tool saves you time or adds precision to your workflow, consider supporting our creative cycle. Your "coffee" fuels the logic that powers your lens.
+* **[Support via BOOTH (Angie's Lab)](https://angieslab.booth.pm/)**
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=muromix&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/muromix)
 
