@@ -31,6 +31,17 @@ This update focuses on navigational integrity, package optimization, and system 
 2. Follow the setup steps in **`INSTALL_JP.txt` or `INSTALL_EN.txt`** included in the package.
 3. If you encounter issues, please report them via the **Issues** tab on GitHub.
 
+### 🛡️ Verify Authenticity (Checksum)
+To ensure the integrity and authenticity of your download, you can verify the SHA256 hash:
+- **Windows (PowerShell)**: `Get-FileHash [filename] -Algorithm SHA256`
+- **Mac (Terminal)**: `shasum -a 256 [filename]`
+
+**v0.9.8_Alpha_Win.zip (191MB)**
+`SHA256: 5180CEE0D6EEC217F470E4849DAD678249995FA2B8A87F7DC47D98329EC820AA`
+
+**v0.9.5_Alpha_Mac.dmg**
+`SHA256: 289350A2329F6F13B8EAB6AC33BB11542F4333FCADA881463C0A2FB3C66C5DC2`
+
 ---
 
 ## ⚖️ Disclaimer
@@ -74,6 +85,17 @@ Focus Visualizer is a gift to the photography community. If this tool saves you 
 1. Windows用の最新 **ZIP** アーカイブをダウンロードしてください。（Macユーザーの方は引き続き v0.9.5 をご使用ください）。
 2. 同梱の **`INSTALL_JP.txt` または `INSTALL_EN.txt`** を読み、手順に従ってセットアップしてください。
 3. 不具合等は GitHub の **Issues** セクションにて承っております。
+
+### 🛡️ 正当性の確認 (チェックサム)
+ダウンロードしたファイルが正規のものであるか、ハッシュ値で確認できます：
+- **Windows (PowerShell)**: `Get-FileHash [ファイル名] -Algorithm SHA256`
+- **Mac (ターミナル)**: `shasum -a 256 [ファイル名]`
+
+**v0.9.8_Alpha_Win.zip (191MB)**
+`SHA256: 5180CEE0D6EEC217F470E4849DAD678249995FA2B8A87F7DC47D98329EC820AA`
+
+**v0.9.5_Alpha_Mac.dmg**
+`SHA256: 289350A2329F6F13B8EAB6AC33BB11542F4333FCADA881463C0A2FB3C66C5DC2`
 
 ---
 
