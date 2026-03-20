@@ -63,18 +63,17 @@ Valuable records of Sony binary parsing and Exif interpretation.
 - [Exif Metadata Spec](./EXIF_METADATA_SPECIFICATION.md) - Detailed tag mapping.
 - [EXIF Manual (Japanese)](./EXIF_TAGS_GUIDE_JP.md) - User-friendly tag list.
 
-### 4. Operations & Handbooks / 運用とリリース
+### 4. Operations & Release / 運用とリリース
 Guides for setup and stable deployment.
-- [v0.9.8 Release Note (English/JP)](./Focus%20Visualizer%20v0.9.md) - **Latest Release**.
+- [v0.9.8 Release Note (English/JP)](./RELEASE_NOTES_v0.9.8.md) - **Latest Release**.
 - [Release Protocol (Master)](./RELEASE_PROTOCOL.md) - **Reproduction & Building steps**.
 - [Installation Guide (EN)](./INSTALLATION_GUIDE_EN.md) - Setup for English users.
 - [インストールガイド (JP)](./INSTALLATION_GUIDE_JP.md) - 日本語環境向けの手順。
 
 ---
 
-## 🚀 Archive & Logs / 軌跡と計画
+## 🚀 Roadmap & Logs / 軌跡と計画
 - [TODO Management](./TODO.md) - Tasks and feature requests.
-- [Archive Directory](./archive/) - Completed strategies and outdated prompts.
 
 ---
 
