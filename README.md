@@ -3,9 +3,9 @@
 ![Hero Shot](assets/004744.png)
 
 Welcome to the future of photography workflows. **Focus Visualizer** is a professional-grade Decision-Making Engine that visualizes what is hidden in your RAW metadata—instantly.
+
 ---
- **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP (Win) or DMG (Mac).
- 
+
 ## 🎯 1. Core Concept: "Focus on the Focus"
 
 While Adobe Lightroom Classic is powerful for color and composition, determining the exact sharpness often requires manual zooming and waiting for rendering. Our philosophy is to **visualize the hidden precision** of your camera's AF system, transforming culling from a chore into a high-speed, logical process.
@@ -18,7 +18,8 @@ While Adobe Lightroom Classic is powerful for color and composition, determining
 - **Sticky Zoom (Logic-Driven)**: Press [Space] or [Shift] to zoom 1:1, **automatically centering on the primary focus point**.
 
 ### II. Advanced Logistics (Analysis)
-- **Multi-Brand Support**: Deep parsing for **Sony Alpha** (A7R V, A9 III, etc.) and **Canon EOS** (R5, R6 III, R7, etc.).
+- **Extreme Sony Core**: Full support for **Sony α7R V (AI Recognition)**, A9 III, etc. Visualizes real-time subject tracking states (Face/Animal/Bird) via Tag9401 parsing.
+- **Canon EOS Precision**: Deep metadata visualization for R5, R6 III, R7, and more.
 - **Low-Latency Peaking**: Contrast-detection engine with <50ms latency for real-time sharpness evaluation.
 
 ### III. Architected for Pros (Reliability)
@@ -63,7 +64,7 @@ graph LR
 
 ## 👩‍💻 Meet the Team
 
-### 🧠 Lead Engineer (Misato)
+### 🧠 Lead Engineer (Code Name: Anonymous)
 ![Lead Engineer](assets/lead_engineer.png)
 *The sharp-tongued architect of Focus Visualizer. A brilliant beauty with a voluptuous presence and cold logical precision. She mandates the core engine's integrity and provides mandatory B-plans for every implementation.*
 
@@ -79,13 +80,20 @@ graph LR
 - **[Technical Specification](Walkthrough/SPECIFICATION.md)**: Deep dive into the metadata logic.
 - **[Concept Showcase](Walkthrough/FOCUS_VISUALIZER_CONCEPT.md)**: Detailed breakdown of the project's philosophy.
 
-## ☕ Support our Creative Journey
+## ⚖️ License & Terms
 
-Focus Visualizer is a labor of love—born from late-night coding, coffee, and the unique synergy between **muromix and his AI partners (Lead Engineer & Angie)**. We provide this tool as an open-source gift (MIT License) to photographers worldwide.
+Focus Visualizer is provided under a **Personal Use Only** license.
+- **Free for personal, non-commercial use.**
+- **Redistribution is prohibited.** Please download from official channels only.
+- **Modification and commercial use are prohibited.**
 
-If this tool saves you time or adds precision to your workflow, consider supporting our creative cycle. Your "coffee" fuels the logic that powers your lens.
-* **[Support via BOOTH (Angie's Lab)](https://angieslab.booth.pm/)**
+See the full [LICENSE.md](LICENSE.md) for details.
+
+## ☕ Support the Project
+
+If Focus Visualizer saves you time, consider supporting our development! Even a small tip keeps the logic sharp and the "Trinity" inspired.
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=muromix&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/muromix)
 
-*(c) 2026 muromix & Antigravity | Synergy of Human and Machine Intelligence.*
+*(c) 2026 MUROMIX & Antigravity | Synergy of Human and Machine Intelligence.*
+
