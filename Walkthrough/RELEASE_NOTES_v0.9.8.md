@@ -45,7 +45,7 @@ To ensure the integrity and authenticity of your download, you can verify the SH
 ---
 
 ## ⚖️ Disclaimer
-This software is provided "as is", without warranty of any kind. Released under the [MIT License](../LICENSE). This is a Public Alpha build. Use at your own risk.
+This software is provided "as is", without warranty of any kind. Released under a proprietary **[Personal Use License](../LICENSE.md)**. This is a Public Alpha build. Use at your own risk.
 
 ---
 
@@ -100,7 +100,8 @@ Focus Visualizer is a gift to the photography community. If this tool saves you 
 ---
 
 ## ⚖️ 免責事項
-本ソフトウェアは「現状有姿」で提供され、いかなる保証も伴いません。**[MIT ライセンス](../LICENSE)** の下で公開されています。本バージョンは制作途中のアルファ版です。自己責任で御活用ください。
+本ソフトウェアは「現状有姿」で提供され、いかなる保証も伴いません。**[個人利用限定ライセンス](../LICENSE.md)** の下で提供されています。本バージョンは制作途中のアルファ版です。自己責任で御活用ください。
+
 
 ---
 

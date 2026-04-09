@@ -1,6 +1,6 @@
 # Focus Visualizer - ビューアーUI仕様書 (UI Specification)
 
-**Date**: 2026-03-20 (v0.9.8 Alpha 準拠)
+**Date**: 2026-03-31 (v0.9.9 Alpha 準拠予定)
 
 本ドキュメントは、Viewerアプリ (Electron) のUIコンポーネント構造、視覚的レイアウト、および操作エリアを定義します。
 
@@ -14,7 +14,10 @@
 
 ### 1.1 モード別特性 (Mode Characteristics)
 - **Full Mode**: 右側に固定（モニタ端）。精密なピント確認のため、100%表示やターゲットズームを活用。
-- **Lite Mode**: 自由配置可能。選別（Culling）を最速化するため、初期画質は常に **Speed (1600px)** に制限。
+- **Lite Mode**: 自由配置可能。ミニマルな選別（Culling）に特化。
+    - **Power-Up (Unlocked)**: コナミコマンド等でアンロックされた状態では、Liteモードでもレーティング、ラベル、フラグ、画質切替などのフルショートカットが利用可能（レイアウト切替 `I` を除く）。
+    - **GUI Minimalism**: アンロック後も「Full Modeへの昇格」ボタンなどのGUI要素を一切表示せず、ショートカットキー操作のみを許容するストイックな設計。
+    - **Performance**: 初期画質は引き続き最速の **Speed (1600px)** を優先。
 
 ---
 
@@ -98,6 +101,10 @@ AFの動作結果やターゲットトラッキングの情報を表示します
 ### 3.5 統一ログ管理 (Unified Log Management)
 - **Centralized Logging**: All log outputs from the Python backend, Electron main process, and Lightroom Plugin are directed to a single `Logs/` directory at the project root. This simplifies multi-process debugging and provides a persistent record for stability analysis.
 - **一極集中ロギング**: Python、Electron、Lightroomプラグインの各ログ出力を、プロジェクトルートの `Logs/` フォルダへ集約。複数プロセスが独立して動く本システムのトラブルシューティングを劇的に簡略化するとともに、長期的な安定稼働の記録を提供します。
+
+### 3.6 ディスプレイ適応型配置 (Multi-Display Adaptive Positioning)
+- **Mouse-Context Initial Placement (LRC追従)**: ビューワーの初回起動時、システムのプライマリディスプレイではなく「マウスカーソルのあるディスプレイ」を優先してウィンドウを生成します。これにより、LRCを操作しているモニターのすぐ隣にビューワーがパッと現れる直感的な挙動を実現しました。
+- **Display Sticky (画面固定スナップ)**: モード切替（Full ↔ Lite）やリサイズ時、現在ウィンドウが表示されているディスプレイを `screen.getDisplayMatching()` で検出し、そのディスプレイの WorkArea 内で配置を完結させます。拡張モニターで使用中に、勝手にメインモニターへウィンドウが戻ってしまう現象を根絶しました。
 
 ---
 **注意**: ショートカットキー等の定義は統合仕様書(SPECIFICATION.md)に集約されています。

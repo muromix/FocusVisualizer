@@ -8,8 +8,8 @@ A high-performance full-stack viewer that extracts metadata (focus position, mod
 - **Release Repository**: [https://github.com/muromix/FocusVisualizer/releases/latest](https://github.com/muromix/FocusVisualizer/releases/latest)
 
 ### License
-- **MIT License**: This project is licensed under the MIT License. Free for commercial and non-commercial use, modification, and redistribution, provided the copyright notice and disclaimer are retained.
-- **LICENSE**: Refer to [../LICENSE](../LICENSE) in the project root.
+- **Personal Use License**: This project is licensed under a proprietary Personal Use Only license. It is free for personal, non-commercial use on your own devices. Redistribution, commercial use, modification, and reverse engineering are prohibited.
+- **LICENSE**: Refer to [../LICENSE.md](../LICENSE.md) in the project root.
 
 ### Secure IPC Foundation
 Based on modern Electron best practices:
@@ -58,9 +58,16 @@ Please refer to individual documents for detailed technical specs.
 | **Speed** | 1600px | **Fast & Smooth** | **Default for both Full/Lite** |
 | **Full** | Original | Precision culling | Manual / Q-key only |
 
-*   **Lite Mode Optimization**: Previously, Lite mode loaded Full quality automatically. Now, it defaults to **Speed Mode** to prioritize rapid navigation and snacky UX during the initial culling phase.
+*   **Lite Mode Evolution (Power-Up)**: 
+    - **Full Shortcut Unlock**: Power users (Unlocked via Konami Code) can now use all shortcuts (Rating, Label, Flag, Quality) in Lite mode (except for Layout Cycling `I`).
+    - **GUI Minimalism**: Mode switching is now handled strictly via shortcuts (`M`). The transition button is hidden even when unlocked to maintain a distraction-free environment.
+    - **Performance**: Defaults to **Speed Mode** (1600px) to prioritize record-speed navigation.
 
----
+*   **Multi-Display Adaptation (Display Sticky)**: 
+    - **LRC-Sticky Placement**: At startup, detects the display containing the cursor (where the user is active in LRC) and places the window there.
+    - **Monitor Locking**: Mode switching and resizing are anchored to the current display (detected via `screen.getDisplayMatching()`), preventing accidental window jumps between monitors.
+
+*   **Quality Lock & Blocking**: 
 
 ## 4. Core Philosophy: Selection Specialized - *Defined 2026/03/05*
 This project does not aim to be a generic image editor. It is a specialized professional tool for **"Culling" (selecting the best shots at record speed).**
@@ -84,10 +91,18 @@ This project does not aim to be a generic image editor. It is a specialized prof
 | `P` | **Peaking** ON/OFF |
 | `A` / `X` / `U` | Flagging (Pick / Reject / Unflag) |
 | `1` - `5` | Set Ratings |
+| `M` | **Mode Toggle** (Full ↔ Lite) |
+
+*Note: Unlocked power users can use all of the above shortcuts (except 'I') in Lite Mode.*
 
 ---
 
 ## 9. Changelog Highlights
+- **2026/03/31**: **"Minimalism & Multi-Display Sticky Behavior"**
+  - **Lite Mode Power-Up**: Unlocked Lite Mode via Konami code now allows all selection shortcuts (1-9, Q, A, X, U) to be processed.
+  - **GUI Minimalism**: Removed the mode promotion button in favor of a strictly shortcut-driven (M key) workflow.
+  - **Smart Monitor Mapping**: Introduced display-aware positioning (`screen.getDisplayMatching`). The viewer now opens on the LRC monitor and follows the current screen during mode swaps.
+  - **Zen Design Evolution**: Instead of a complex "Auto-Zen" mode, we've simplified the existing Lite Mode to provide a pure, immersive culling experience.
 - **2026/03/13**: **"4-Layer Metadata Fortress (Metadata Persistence Mastery)"**
   - **Metadata Immutability**: Solved the "vanishing ratings" bug during quality switches or browser reloads.
   - **4-Tier Defense**: Implemented a coordinated architecture (Heartbeat Guard, Action Guard, Injection Guard, and Authority Guard) to govern asynchronous race conditions.
@@ -110,8 +125,11 @@ This project does not aim to be a generic image editor. It is a specialized prof
   - **Zero-Flicker Architecture**: Implemented a 300ms metadata wait-loop to eliminate vertical rotation flickering.
   - **Lite Mode Speed Boost**: Defaulted initial quality to "Speed" (1600px) for rapid navigation.
 
-- **2026/03/02**: **"The Open Wings"** (Open Source Transition)
-  - **MIT License**: Migrated to open source for better community synergy.
+- **2026/04/09**: **"License Lockdown (Personal Use Only)"**
+  - **License Enforcement**: Transitioned from open-source (MIT) to a proprietary Personal Use Only license to protect muromix's intellectual property. Redistribution and commercial use are now prohibited.
+
+- **2026/03/02**: **"Open Source Pilot"**
+  - Briefly piloted the project under the MIT License.
   - **Payload Reduction (158MB)**: Fixed recursive build bug (mirror-in-mirror).
   - **Mac Launch Boost**: `--onedir` migration for faster backend startup.
 
