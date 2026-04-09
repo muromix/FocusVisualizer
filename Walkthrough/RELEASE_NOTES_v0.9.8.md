@@ -45,7 +45,7 @@ To ensure the integrity and authenticity of your download, you can verify the SH
 ---
 
 ## ⚖️ Disclaimer
-This software is provided "as is", without warranty of any kind. Released under a proprietary **[Personal Use License](../LICENSE.md)**. This is a Public Alpha build. Use at your own risk.
+This software is provided "as is", without warranty of any kind. Released under a proprietary **[Personal Use License](../LICENSE)**. This is a Public Alpha build. Use at your own risk.
 
 ---
 
