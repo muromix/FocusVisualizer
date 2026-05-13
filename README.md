@@ -87,7 +87,7 @@ Focus Visualizer is provided under a **Personal Use Only** license.
 - **Redistribution is prohibited.** Please download from official channels only.
 - **Modification and commercial use are prohibited.**
 
-See the full [LICENSE.md](LICENSE.md) for details.
+See the full [LICENSE](LICENSE) for details.
 
 ## ☕ Support the Project
 
