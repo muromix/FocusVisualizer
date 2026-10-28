@@ -15,8 +15,8 @@ While Adobe Lightroom Classic is powerful for color and composition, determining
 - **Hidden Metadata**: Cameras record exactly where they focused, but most post-processing software discards or hides this information.
 
 ### The Solution
-- **Instant Visualization**: See the AF frames exactly as they appeared in your viewfinder.
-- **Zero-Latency Workflow**: Sync with Lightroom in real-time. As you scroll, Focus Visualizer follows.
+- **Instant Visualization**: See the AF position recorded by your camera, overlaid on the image.
+- **Real-Time Workflow**: Syncs with Lightroom. As you select photos in Lightroom, Focus Visualizer follows.
 
 ---
 
@@ -24,21 +24,21 @@ While Adobe Lightroom Classic is powerful for color and composition, determining
 
 ### I. High-Speed Review (The Engine)
 - **Parallel Analysis Pipeline**: Utilizes a dual-track system. Metadata (AF frames/Camera info) is parsed via an **ExifTool Stay-Open Instance** for millisecond delivery, while a background thread extracts the preview simultaneously.
-- **Zero-Latency SSE Data Push**: Eliminates traditional HTTP request overhead by bundling the Base64-encoded image preview directly into the SSE notification stream. The visual data and metadata arrive at the exact same millisecond.
-- **Aggressive Buffering & Clean Environment**: Built on a consolidated Python virtual environment with intelligent neighbor prefetching to guarantee a 0ms display delay during high-speed "flipbook" culling.
+- **2-Step Delivery via SSE**: Metadata and AF coordinates are pushed to the viewer via Server-Sent Events as soon as they are parsed, and the preview image is loaded from the local server. AF frames can appear before the image finishes loading.
+- **Prefetching**: Metadata for neighboring photos is loaded in advance to keep high-speed "flipbook" culling smooth.
 - **Sticky Zoom (Logic-Driven)**: Not just a zoom; it calculates the precise normalized coordinates of the primary AF point to center the view instantly.
 
 ### II. Advanced Logistics (Analysis)
-- **Multi-Brand Support**: Deep parsing for **Sony Alpha** (A7R V, A9 III, etc.) and **Canon EOS** (R5, R6 III).
-- **Low-Latency Peaking**: Contrast-detection engine with <50ms latency for real-time sharpness evaluation.
+- **Multi-Brand Support**: Parsing for **Sony Alpha** and **Canon EOS R series** metadata.
+- **Focus Peaking**: Contrast-detection overlay that highlights in-focus areas, with an adjustable threshold.
 
 ### III. Architected for Pros (Reliability)
 - **100% Local & Private**: No cloud, no internet. Your data never leaves your machine.
-- **SSE Real-time Sync**: Flicker-free communication between Lightroom and the Viewer.
-- **Cross-Platform Stealth (Win/Mac)**:
-  - **Windows**: Stealth VBS launcher eliminates the "black window" (cmd prompt) during startup. Fully portable—no Python installation required.
-  - **Mac**: Native `.app` bundle optimized for Silicon/Intel with intelligent app-switching logic.
-- **Native Path Support**: Includes "Mojibake Rescue" logic for Windows, ensuring 100% stability even in Japanese/Multi-byte character folder paths.
+- **SSE Real-time Sync**: The viewer receives updates from the backend instantly via Server-Sent Events.
+- **Cross-Platform (Win/Mac)**:
+  - **Windows**: Fully portable—no Python or Node.js installation required.
+  - **Mac**: Native `.app` bundle for Apple Silicon Macs.
+- **Native Path Support**: Includes "Mojibake Rescue" logic for Windows, so photos in folders with Japanese/Multi-byte names can be displayed.
 
 ---
 
@@ -64,8 +64,9 @@ graph TD
     end
 
     LRC -- "1. Path Sync (Post)" --> PC
-    PC -- "2. Bundle Base64 Img + Meta" --> SSE
-    SSE -- "3. Instant Data Push" --> UI
+    PC -- "2. Meta + AF Coords" --> SSE
+    SSE -- "3. Instant Push" --> UI
+    PC -- "4. Preview Image (HTTP)" --> UI
     UI -- "Action: Space Key" --> SZ
 ```
 
@@ -97,8 +98,8 @@ Adobe Lightroom Classicは色調補正や構図の追い込みには強力です
 - **隠されたメタデータ**：カメラは「どこにピントを合わせたか」を正確に記録していますが、ほとんどの現像ソフトはその情報を捨て去るか、ユーザーから隠してしまいます。
 
 ### 解決策 (Solution)
-- **瞬時の可視化**：ファインダーで見ていた通りのAF枠を、PC画面上に正確に再現します。
-- **遅延ゼロのワークフロー**：Lightroomとリアルタイムに同期。Lightroomで写真を選ぶだけで、Focus Visualizerが即座に追従します。
+- **瞬時の可視化**：カメラが記録したAF位置を、画像の上に重ねて表示します。
+- **リアルタイムのワークフロー**：Lightroomと同期。Lightroomで写真を選ぶだけで、Focus Visualizerが追従します。
 
 ---
 
@@ -106,21 +107,21 @@ Adobe Lightroom Classicは色調補正や構図の追い込みには強力です
 
 ### I. 高速レビュー (並列処理エンジンの極致)
 - **並列解析パイプライン**: **ExifToolのStay-Openモード（常駐プロセス化）**を活用。ミリ秒単位でメタデータ（AF枠・撮影情報）を先行抽出し、画像展開と並列して処理するデュアル・トラック・システムを採用しています。
-- **Zero-Latency SSE Data Push (パラパラ動画体験)**: Base64にエンコードされたプレビュー画像をSSEの通知ストリームに直接同梱する「データ・プッシュ」を採用。画像リクエストの往復通信を物理的に排除し、画像とメタデータを1ミリ秒のズレもなく同時に Viewer へ届けます。
-- **アグレッシブ・プリフェッチとクリーンな環境**: 進行方向の画像をバックグラウンドで先読み（Prefetch）する強力なバッファリングと、プロジェクトルートに集約された単一の仮想環境により、超高速スクロール時でも「遅延ゼロ」の表示を保証します。
+- **SSEによる2段階表示**: 解析が終わったメタデータとAF座標をServer-Sent Eventsでビューアーへ即座に送り、プレビュー画像は手元のサーバーから読み込みます。画像の読み込みが終わる前からAF枠を表示できます。
+- **先読み（Prefetch）**: 前後の写真のメタデータを先に読み込み、高速な「パラパラめくり」でも表示を滑らかにします。
 - **ロジック主導の吸い付きズーム**: 単なる拡大ではなく、AF情報の正規化座標を瞬時に計算。スペースキー一つで「ピント位置が画面中央に来る」よう、視線を誘導するUXを提供します。
 
 ### II. 高度な解析エンジン (Analysis)
-- **マルチブランド対応**：Sony α（A7R V, A9 III等）からCanon EOS（R5, R6 III）まで、深い解析アルゴリズムを搭載。
-- **低遅延ピーキング**：50ms以下の極低遅延で合焦範囲を可視化する、独自のコントラスト検出エンジン。
+- **マルチブランド対応**：Sony α と Canon EOS R シリーズのメタデータを解析します。
+- **フォーカスピーキング**：ピントの合った部分をコントラスト検出で強調表示します。しきい値は調整できます。
 
 ### III. プロ仕様の設計 (Reliability)
 - **100% ローカル＆プライベート**：クラウド送信もインターネット接続も不要。大切なデータは手元から離れません。
-- **SSEリアルタイム同期**：Server-Sent Eventsを採用し、Lightroomとの同期時の画面のガタつきを完全に排除しました。
-- **クロスプラットフォーム・ステルス設計**:
-  - **Windows**: VBSランチャーによる「黒い窓（コマンドプロンプト）」の完全非表示化。Pythonを内包したポータブル設計でインストール不要。
-  - **Mac**: Apple Silicon/Intel 両対応のネイティブ `.app` 形式。OS標準のスマートなアプリ切り替えに対応。
-- **日本語パス完全対応 (Mojibake Rescue)**: Windows環境特有の文字コード問題を解消。日本語を含むフォルダパスでも100%の動作安定性を保証します。
+- **SSEリアルタイム同期**：Server-Sent Eventsを採用し、バックエンドからの更新をビューアーへ即座に届けます。
+- **クロスプラットフォーム (Win/Mac)**:
+  - **Windows**: PythonやNode.jsのインストールが不要なポータブル設計。
+  - **Mac**: Apple シリコン搭載のMac向けのネイティブ `.app` 形式。
+- **日本語パス対応 (Mojibake Rescue)**: Windows環境特有の文字化けを補正し、日本語を含むフォルダにある写真も表示できるようにしています。
 
 ---
 
@@ -146,8 +147,9 @@ graph TD
     end
 
     LRC -- "1. Path Sync (Post)" --> PC
-    PC -- "2. Bundle Base64 Img + Meta" --> SSE
-    SSE -- "3. Instant Data Push" --> UI
+    PC -- "2. Meta + AF Coords" --> SSE
+    SSE -- "3. Instant Push" --> UI
+    PC -- "4. Preview Image (HTTP)" --> UI
     UI -- "Action: Space Key" --> SZ
 ```
 

@@ -8,10 +8,10 @@
 
 | 元タグ名              | わかりやすい呼び名     | 値                            |
 |-----------------------|------------------------|-------------------------------|
-| DateTimeOriginal      | 撮影日時               | 2023:12:26 19:22:07           |
-| CreateDate            | 記録日時               | 2023:12:26 19:22:07           |
-| ModifyDate            | 最終更新日時           | 2023:12:26 19:22:07           |
-| OffsetTimeOriginal    | 撮影時タイムゾーン     | +09:00                        |
+| DateTimeOriginal      | 撮影日時               | （省略）                      |
+| CreateDate            | 記録日時               | （省略）                      |
+| ModifyDate            | 最終更新日時           | （省略）                      |
+| OffsetTimeOriginal    | 撮影時タイムゾーン     | （省略）                      |
 | Make                  | カメラメーカー         | SONY                          |
 | Model                 | カメラ機種             | ILCE-7RM5                     |
 | Artist                | 撮影者                 | muromix           |
@@ -157,7 +157,7 @@
 | Shutter                       | シャッター制御パラメータ | 2827 5281 6641   |
 | ReleaseMode                   | レリーズモード           | 0（シングル）    |
 | ReleaseMode2                  | レリーズモード詳細       | 0                |
-| ShutterCount / ShutterCount2  | 総シャッター回数         | 6430             |
+| ShutterCount / ShutterCount2  | 総シャッター回数         | （省略）         |
 
 ---
 
@@ -182,12 +182,12 @@
 | 元タグ名           | わかりやすい呼び名     | 値                                           |
 |--------------------|------------------------|----------------------------------------------|
 | FileName           | ファイル名             | DSC05206.ARW                                 |
-| Directory          | 保存フォルダパス       | L:/過去pic/2023/2023-12-26                   |
+| Directory          | 保存フォルダパス       | （省略）                                     |
 | FileSize           | ファイルサイズ         | 131,604,480 バイト（約125MB）               |
 | FileTypeExtension  | 拡張子                 | ARW                                          |
-| FileCreateDate     | ファイル作成日時       | 2025:03:22 15:39:30+09:00                    |
-| FileModifyDate     | ファイル更新日時       | 2023:12:26 19:22:08+09:00                    |
-| FileAccessDate     | ファイルアクセス日時   | 2025:03:22 19:35:48+09:00                    |
+| FileCreateDate     | ファイル作成日時       | （省略）                                     |
+| FileModifyDate     | ファイル更新日時       | （省略）                                     |
+| FileAccessDate     | ファイルアクセス日時   | （省略）                                     |
 | JpgFromRaw         | 埋め込みJPEGプレビュー | 約8.4MB（8804741バイト）                    |
 | PreviewImage       | 追加プレビュー画像     | 1616 × 1080 / 180,709バイト                 |
 | ThumbnailImage     | サムネイル画像         | 7569バイト                                   |

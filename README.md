@@ -15,19 +15,19 @@ While Adobe Lightroom Classic is powerful for color and composition, determining
 ### I. High-Speed Review (The Engine)
 - **Parallel Analysis Pipeline**: Utilizes an **ExifTool Stay-Open Instance** for millisecond metadata delivery, while a background thread extracts the preview simultaneously.
 - **2-Step Immediate Delivery**: Displays focus points *instantly* before the image fully loads, eliminating perceived lag.
-- **Sticky Zoom (Logic-Driven)**: Press [Space] or [Shift] to zoom 1:1, **automatically centering on the primary focus point**.
+- **Sticky Zoom (Logic-Driven)**: Press [Space] to zoom 1:1, **automatically centering on the primary focus point**.
 
 ### II. Advanced Logistics (Analysis)
-- **Extreme Sony Core**: Full support for **Sony α7R V (AI Recognition)**, A9 III, etc. Visualizes real-time subject tracking states (Face/Animal/Bird) via Tag9401 parsing.
-- **Canon EOS Precision**: Deep metadata visualization for R5, R6 III, R7, and more.
-- **Low-Latency Peaking**: Contrast-detection engine with <50ms latency for real-time sharpness evaluation.
+- **Extreme Sony Core**: Visualizes Sony α AF points and the subject recognition (Face/Animal/Bird) recorded in the maker notes, including Tag9401.
+- **Canon EOS Precision**: Visualizes AF areas from Canon EOS R series metadata.
+- **Focus Peaking**: Contrast-detection overlay that highlights in-focus areas.
 
 ### III. Architected for Pros (Reliability)
 - **100% Local & Private**: No cloud, no internet. Your data never leaves your machine.
-- **Cross-Platform Stealth (Win/Mac)**:
-  - **Windows**: Stealth VBS launcher eliminates cmd windows. Fully portable—no Python installation required.
-  - **Mac**: Native `.app` bundle optimized for Silicon/Intel.
-- **Native Path Support**: Includes "Mojibake Rescue" for perfect stability in Japanese/Multi-byte character folder paths.
+- **Cross-Platform (Win/Mac)**:
+  - **Windows**: Fully portable—no Python or Node.js installation required.
+  - **Mac**: Native `.app` bundle for Apple Silicon Macs.
+- **Native Path Support**: Includes "Mojibake Rescue" so photos in folders with Japanese/Multi-byte names can be displayed.
 
 ---
 
@@ -76,7 +76,8 @@ graph LR
 
 ## 📥 Getting Started
 
-- **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP (Win) or DMG (Mac).
+- **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP for your OS.
+- **Installation Guide ([English](Walkthrough/INSTALLATION_GUIDE_EN.md) / [日本語](Walkthrough/INSTALLATION_GUIDE_JP.md))**: System requirements and setup steps.
 - **[Technical Specification](Walkthrough/SPECIFICATION.md)**: Deep dive into the metadata logic.
 - **[Concept Showcase](Walkthrough/FOCUS_VISUALIZER_CONCEPT.md)**: Detailed breakdown of the project's philosophy.
 

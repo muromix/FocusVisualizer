@@ -43,11 +43,19 @@ their respective licenses:
 
 | Component | License | URL |
 |-----------|---------|-----|
-| ExifTool by Phil Harvey | Perl Artistic License / GPL | https://exiftool.org/ |
-| LibRaw | LGPL-2.1 | https://www.libraw.org/ |
-| OpenCV | Apache License 2.0 | https://opencv.org/ |
+| ExifTool by Phil Harvey (Windows package, including Perl) | Perl Artistic License / GPL | https://exiftool.org/ |
+| LibRaw | LGPL-2.1 or CDDL-1.0 | https://www.libraw.org/ |
+| rawpy | MIT License | https://github.com/letmaik/rawpy |
 | Python | PSF License | https://www.python.org/ |
-| Electron | MIT License | https://www.electronjs.org/ |
+| Electron (including Chromium) | MIT License (Chromium: see bundled LICENSES.chromium.html) | https://www.electronjs.org/ |
+| Flask / Werkzeug / Click / ItsDangerous / MarkupSafe | BSD-3-Clause | https://palletsprojects.com/ |
+| Pillow | MIT-CMU License | https://python-pillow.github.io/ |
+| NumPy | BSD-3-Clause | https://numpy.org/ |
+| pydantic / pydantic-core | MIT License | https://docs.pydantic.dev/ |
+| psutil | BSD-3-Clause | https://github.com/giampaolo/psutil |
+| Other Python libraries (Jinja2, Blinker, python-dotenv, etc.) | See `Docs/THIRD_PARTY_LICENSES` in the package | — |
+
+The Windows package (v0.9.9.2 and later) includes the full license texts of these components.
 
 This Agreement does not alter the terms of those licenses.
 
