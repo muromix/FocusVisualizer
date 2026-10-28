@@ -53,7 +53,7 @@ their respective licenses:
 | NumPy | BSD-3-Clause | https://numpy.org/ |
 | pydantic / pydantic-core | MIT License | https://docs.pydantic.dev/ |
 | psutil | BSD-3-Clause | https://github.com/giampaolo/psutil |
-| Other Python libraries (Jinja2, Blinker, python-dotenv, etc.) | See `Docs/THIRD_PARTY_LICENSES` in the package | — |
+| Other Python libraries (Jinja2, Blinker, python-dotenv, etc.) | See `Docs/THIRD_PARTY_LICENSES.txt` in the package | — |
 
 The Windows package (v0.9.9.2 and later) includes the full license texts of these components.
 

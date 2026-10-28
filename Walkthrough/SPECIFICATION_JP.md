@@ -39,7 +39,7 @@ Electron の推奨設定に沿って、画面側（レンダラー）の権限�
 | OS | 配布形式 | 起動方法 | 公開中の版 |
 | :--- | :--- | :--- | :--- |
 | **Windows 10 / 11 (64bit)** | ZIP（実行環境・ExifTool 同梱。インストール不要） | Lightroom の [ライブラリ] ＞ [プラグインエクストラ] | **v0.9.9.2 Alpha** |
-| **macOS（Apple シリコン）** | `Focus Visualizer.app` | Lightroom の [ライブラリ] ＞ [プラグインエクストラ] | **v0.9.9.1 Alpha**（v0.9.9.2 は準備中） |
+| **macOS（Apple シリコン）** | `Focus Visualizer.app` | Lightroom の [ライブラリ] ＞ [プラグインエクストラ] | **v0.9.9.2 Alpha** |
 
 ---
 
