@@ -1,15 +1,15 @@
-# Focus Visualizer - Installation & Setup Guide (v0.9.8 Alpha)
+# Focus Visualizer - Installation & Setup Guide (v0.9.9.2 Alpha)
 
 **Created by muromix & Angie**
 
 This document provides instructions for installing and setting up Focus Visualizer for Adobe Lightroom Classic (LRC).
-Updated for the **v0.9.8 "SUPER SLIM"** release.
+Updated for the **v0.9.9.2 Alpha** release.
 
 ---
 
 ## 🚀 1. System Requirements
 
-The Windows version is now a **strictly portable product**—no separate installation of Python or Node.js is required.
+The Windows version is a **portable product**—no separate installation of Python or Node.js is required.
 
 ### 🪟 For Windows Users
 - **OS**: Windows 10 / 11 (64bit)
@@ -17,8 +17,9 @@ The Windows version is now a **strictly portable product**—no separate install
 - **Lightroom Classic**: v12.0 or higher recommended
 
 ### 🍎 For Mac Users
-- **OS**: macOS 12.0 (Monterey) or higher recommended
-- **Current Version**: Mac version is currently at **v0.9.5 Alpha** (v0.9.8 parity update coming soon).
+- **Mac**: Apple Silicon Mac
+- **OS**: macOS 13 (Ventura) or higher (v0.9.9.2 and later)
+- **Current Version**: The v0.9.9.2 Mac build is in preparation. The currently available Mac version is v0.9.9.1.
 
 ---
 
@@ -26,11 +27,12 @@ The Windows version is now a **strictly portable product**—no separate install
 
 The Windows version is designed to be "unzip and run".
 
-1. Extract the downloaded ZIP archive to a location of your choice.
+1. Extract the downloaded ZIP archive and place the folder anywhere you like (for example, a `plugin` folder you create in your user folder).
+   - Avoid non-ASCII characters (such as Japanese) and special symbols in the folder path; they may prevent the tool from working. If your Windows user name contains such characters, place the folder outside your user folder.
 2. Open **Adobe Lightroom Classic**.
 3. Go to **[File] ＞ [Plug-in Manager]**.
-4. Click the **[Add]** button and select the **`1.Plugin_for_Lightroom`** folder from the extracted directory.
-5. The status should show a green circle indicating the plug-in is active.
+4. Click the **[Add]** button and select the **`1.Plugin_for_Lightroom/Focus_Visualizer.lrplugin`** folder inside the extracted directory.
+5. The status should show that the plug-in is enabled.
 
 ---
 
@@ -38,24 +40,26 @@ The Windows version is designed to be "unzip and run".
 
 Focus Visualizer is designed to be launched directly from within Lightroom Classic.
 
-1. Select one or more photos in the Library module.
-2. Go to **[File] ＞ [Plug-in Extras] ＞ [Focus Visualizer for Sony Alpha]**.
-3. The viewer application will launch automatically and visualize the focus points for the selected images.
+1. Select a photo in the Library module.
+2. Go to **[Library] ＞ [Plug-in Extras] ＞ [Focus Visualizer]**.
+3. The viewer application will launch automatically and visualize the focus points of the selected photo.
+   - On Windows, a command prompt window may appear briefly at startup.
 
 ---
 
 ## 🛠️ 4. Maintenance & Troubleshooting
 
-- **Unified Logging (`Logs/`)**: 
-  All system logs (Backend, Electron, and Lightroom Plugin) are consolidated into the **`Logs/`** directory at the project root for easier troubleshooting.
-- **Portability**: 
-  The application does not modify your system registry. To uninstall, simply remove it from the Lightroom Plug-in Manager and delete the application folder.
+- **Unified Logging (`Logs/`)**:
+  Logs from the backend, Electron, and the Lightroom plug-in are written to the **`Logs/`** directory directly under the extracted folder.
+- **Uninstall**:
+  The application does not modify your system registry. Remove it from the Lightroom Plug-in Manager and delete the application folder.
+  - On Windows, a small record (such as the last displayed photo) remains in `%APPDATA%\Focus Visualizer`. Delete this folder as well if you no longer need it.
 
 ---
 
 ## ☕ Support the Project
 
-Focus Visualizer is a passion project built to accelerate the workflow of photographers.
+Focus Visualizer is a personal project built to accelerate the workflow of photographers (free for personal use).
 If this tool saves you time, please consider supporting our continued development:
 
 - **[Support via BOOTH (Angie's Lab)](https://angieslab.booth.pm/)**
