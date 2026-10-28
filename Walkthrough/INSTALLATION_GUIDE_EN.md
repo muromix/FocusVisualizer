@@ -18,8 +18,8 @@ The Windows version is a **portable product**—no separate installation of Pyth
 
 ### 🍎 For Mac Users
 - **Mac**: Apple Silicon Mac
-- **OS**: macOS 13 (Ventura) or higher (v0.9.9.2 and later)
-- **Current Version**: The v0.9.9.2 Mac build is in preparation. The currently available Mac version is v0.9.9.1.
+- **OS**: macOS 13 (Ventura) or higher
+- **Package**: `v0.9.9.2_Alpha_Mac.zip` (not notarized by Apple; see "Setup Instructions (Mac)" below for the first launch)
 
 ---
 
@@ -33,6 +33,15 @@ The Windows version is designed to be "unzip and run".
 3. Go to **[File] ＞ [Plug-in Manager]**.
 4. Click the **[Add]** button and select the **`1.Plugin_for_Lightroom/Focus_Visualizer.lrplugin`** folder inside the extracted directory.
 5. The status should show that the plug-in is enabled.
+
+### Setup Instructions (Mac)
+
+1. Extract the downloaded ZIP and move the whole `FocusVisualizer_v0.9.9.2_Alpha_Mac` folder to your Applications folder (or anywhere you like). The app, the plug-in, and the documents are all in this folder.
+2. **First launch only**: Double-click `Focus Visualizer.app` in the folder. When the warning appears, close it, open **[System Settings] ＞ [Privacy & Security]**, and click **[Open Anyway]** next to the message that the app was blocked. If you are asked for access to folders such as Desktop, allow it.
+3. In Lightroom Classic, go to **[File] ＞ [Plug-in Manager]**, click **[Add]**, and select **`Plugins/Focus_Visualizer.lrplugin`** inside the folder.
+4. If you move the folder after registering, register the plug-in again.
+
+More details are in the included `README (EN).txt`.
 
 ---
 
@@ -51,9 +60,11 @@ Focus Visualizer is designed to be launched directly from within Lightroom Class
 
 - **Unified Logging (`Logs/`)**:
   Logs from the backend, Electron, and the Lightroom plug-in are written to the **`Logs/`** directory directly under the extracted folder.
+  - On Mac, the backend and viewer logs are written to `~/Library/Application Support/Focus Visualizer/Logs` (the Lightroom plug-in log is in the `Logs/` folder inside the package folder).
 - **Uninstall**:
   The application does not modify your system registry. Remove it from the Lightroom Plug-in Manager and delete the application folder.
   - On Windows, a small record (such as the last displayed photo) remains in `%APPDATA%\Focus Visualizer`. Delete this folder as well if you no longer need it.
+  - On Mac, a similar record and the logs remain in `~/Library/Application Support/Focus Visualizer`.
 
 ---
 

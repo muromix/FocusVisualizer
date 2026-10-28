@@ -39,7 +39,7 @@ Following Electron's recommended settings, the renderer (UI) runs with minimal p
 | OS | Package | How to Launch | Current Release |
 | :--- | :--- | :--- | :--- |
 | **Windows 10 / 11 (64bit)** | ZIP (runtimes and ExifTool bundled, no installation) | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.2 Alpha** |
-| **macOS (Apple Silicon)** | `Focus Visualizer.app` | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.1 Alpha** (v0.9.9.2 in preparation) |
+| **macOS (Apple Silicon)** | `Focus Visualizer.app` | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.2 Alpha** |
 
 ---
 
