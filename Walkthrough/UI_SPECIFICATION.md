@@ -1,6 +1,6 @@
 # Focus Visualizer - ビューアーUI仕様書 (UI Specification)
 
-**対象バージョン**: v0.9.9.2 Alpha
+**対象バージョン**: v0.9.9.3 Alpha
 
 本ドキュメントは、Viewerアプリ (Electron) のUIコンポーネント構造、視覚的レイアウト、および操作エリアを定義します。
 
