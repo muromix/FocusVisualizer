@@ -1,6 +1,6 @@
 # Focus Visualizer - Master Specification (English)
 
-**Applies to**: v0.9.9.2 Alpha
+**Applies to**: v0.9.9.3 Alpha
 
 ## 1. Application Overview
 A viewer that extracts the metadata recorded by the camera (AF position, subject recognition, shooting info, etc.) from Sony Alpha and Canon EOS RAW images, and overlays the AF frames on the image while staying in sync with Adobe Lightroom Classic.
@@ -38,8 +38,8 @@ Following Electron's recommended settings, the renderer (UI) runs with minimal p
 ### Supported Platforms
 | OS | Package | How to Launch | Current Release |
 | :--- | :--- | :--- | :--- |
-| **Windows 10 / 11 (64bit)** | ZIP (runtimes and ExifTool bundled, no installation) | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.2 Alpha** |
-| **macOS (Apple Silicon)** | `Focus Visualizer.app` | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.2 Alpha** |
+| **Windows 10 / 11 (64bit)** | ZIP (runtimes and ExifTool bundled, no installation) | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.3 Alpha** |
+| **macOS (Apple Silicon)** | `Focus Visualizer.app` | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.3 Alpha** |
 
 ---
 

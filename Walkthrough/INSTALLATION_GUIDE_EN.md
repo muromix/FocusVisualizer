@@ -1,9 +1,9 @@
-# Focus Visualizer - Installation & Setup Guide (v0.9.9.2 Alpha)
+# Focus Visualizer - Installation & Setup Guide (v0.9.9.3 Alpha)
 
 **Created by muromix & Angie**
 
 This document provides instructions for installing and setting up Focus Visualizer for Adobe Lightroom Classic (LRC).
-Updated for the **v0.9.9.2 Alpha** release.
+Updated for the **v0.9.9.3 Alpha** release.
 
 ---
 
@@ -19,7 +19,7 @@ The Windows version is a **portable product**—no separate installation of Pyth
 ### 🍎 For Mac Users
 - **Mac**: Apple Silicon Mac
 - **OS**: macOS 13 (Ventura) or higher
-- **Package**: `v0.9.9.2_Alpha_Mac.zip` (not notarized by Apple; see "Setup Instructions (Mac)" below for the first launch)
+- **Package**: `v0.9.9.3_Alpha_Mac.zip` (not notarized by Apple; see "Setup Instructions (Mac)" below for the first launch)
 
 ---
 
@@ -36,7 +36,7 @@ The Windows version is designed to be "unzip and run".
 
 ### Setup Instructions (Mac)
 
-1. Extract the downloaded ZIP and move the whole `FocusVisualizer_v0.9.9.2_Alpha_Mac` folder to your Applications folder (or anywhere you like). The app, the plug-in, and the documents are all in this folder.
+1. Extract the downloaded ZIP and move the whole `FocusVisualizer_v0.9.9.3_Alpha_Mac` folder to your Applications folder (or anywhere you like). The app, the plug-in, and the documents are all in this folder.
 2. **First launch only**: Double-click `Focus Visualizer.app` in the folder. When the warning appears, close it, open **[System Settings] ＞ [Privacy & Security]**, and click **[Open Anyway]** next to the message that the app was blocked. If you are asked for access to folders such as Desktop, allow it.
 3. In Lightroom Classic, go to **[File] ＞ [Plug-in Manager]**, click **[Add]**, and select **`Plugins/Focus_Visualizer.lrplugin`** inside the folder.
 4. If you move the folder after registering, register the plug-in again.

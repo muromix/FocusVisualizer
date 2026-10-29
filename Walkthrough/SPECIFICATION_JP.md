@@ -1,6 +1,6 @@
 # Focus Visualizer - 全体仕様書 (Master Specification - Japanese)
 
-**対象バージョン**: v0.9.9.2 Alpha
+**対象バージョン**: v0.9.9.3 Alpha
 
 ## 1. アプリケーション概要 (Overview)
 Sony α・Canon EOS で撮影した RAW 画像から、カメラが記録したメタデータ（AF 位置、被写体認識、撮影情報など）を取り出し、Lightroom Classic と連動しながら AF 枠を重ねて表示するビューアーです。
@@ -38,8 +38,8 @@ Electron の推奨設定に沿って、画面側（レンダラー）の権限�
 ### 対応プラットフォーム (Supported Platforms)
 | OS | 配布形式 | 起動方法 | 公開中の版 |
 | :--- | :--- | :--- | :--- |
-| **Windows 10 / 11 (64bit)** | ZIP（実行環境・ExifTool 同梱。インストール不要） | Lightroom の [ライブラリ] ＞ [プラグインエクストラ] | **v0.9.9.2 Alpha** |
-| **macOS（Apple シリコン）** | `Focus Visualizer.app` | Lightroom の [ライブラリ] ＞ [プラグインエクストラ] | **v0.9.9.2 Alpha** |
+| **Windows 10 / 11 (64bit)** | ZIP（実行環境・ExifTool 同梱。インストール不要） | Lightroom の [ライブラリ] ＞ [プラグインエクストラ] | **v0.9.9.3 Alpha** |
+| **macOS（Apple シリコン）** | `Focus Visualizer.app` | Lightroom の [ライブラリ] ＞ [プラグインエクストラ] | **v0.9.9.3 Alpha** |
 
 ---
 
