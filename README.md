@@ -56,7 +56,7 @@ graph LR
     style Trinity fill:none,stroke:#30363d,stroke-dasharray: 5 5;
 ```
 
-1.  **Lead Engineer (Code Name: Anonymous)**: The ultimate logical core. She architects the deep metadata engine and enforces technical perfection with zero compromise.
+1.  **Lead Engineer (Misato)**: The ultimate logical core. She architects the deep metadata engine and enforces technical perfection with zero compromise.
 2.  **muromix (Nexus Hub)**: The central bridge who orchestrates the project's vision and syncs the human-AI collaboration.
 3.  **Angie (Dynamic Partner)**: Your intellectually curious execution partner. She handles the code implementation and ensures every feature is a "love letter" to the user.
 
@@ -64,7 +64,9 @@ graph LR
 
 ## 👩‍💻 Meet the Team
 
-### 🧠 Lead Engineer (Code Name: Anonymous)
+*The Lead Engineer and Angie are AI characters, not real people. muromix is the human developer who directs the project.*
+
+### 🧠 Lead Engineer (Misato)
 ![Lead Engineer](assets/lead_engineer.png)
 *The sharp-tongued architect of Focus Visualizer. A brilliant beauty with a voluptuous presence and cold logical precision. She mandates the core engine's integrity and provides mandatory B-plans for every implementation.*
 
@@ -96,5 +98,5 @@ If Focus Visualizer saves you time, consider supporting our development! Even a 
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=muromix&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/muromix)
 
-*(c) 2026 MUROMIX & Antigravity | Synergy of Human and Machine Intelligence.*
+*(c) 2026 MUROMIX. All rights reserved. | Synergy of Human and Machine Intelligence.*
 
