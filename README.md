@@ -18,7 +18,7 @@ While Adobe Lightroom Classic is powerful for color and composition, determining
 - **Sticky Zoom (Logic-Driven)**: Press [Space] to zoom 1:1, **automatically centering on the primary focus point**.
 
 ### II. Advanced Logistics (Analysis)
-- **Extreme Sony Core**: Visualizes Sony α AF points and the subject recognition (Face/Animal/Bird) recorded in the maker notes, including Tag9401.
+- **Extreme Sony Core**: Visualizes Sony α AF points, and shows the AF area and subject recognition settings (human eye, animal, etc.) and the Flexible Spot size recorded in the maker notes.
 - **Canon EOS Precision**: Visualizes AF areas from Canon EOS R series metadata.
 - **Focus Peaking**: Contrast-detection overlay that highlights in-focus areas.
 

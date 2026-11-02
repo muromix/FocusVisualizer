@@ -1,6 +1,6 @@
 # Focus Visualizer - Master Specification (English)
 
-**Applies to**: v0.9.9.3 Alpha
+**Applies to**: v0.9.9.4 Alpha
 
 ## 1. Application Overview
 A viewer that extracts the metadata recorded by the camera (AF position, subject recognition, shooting info, etc.) from Sony Alpha and Canon EOS RAW images, and overlays the AF frames on the image while staying in sync with Adobe Lightroom Classic.
@@ -19,6 +19,8 @@ Following Electron's recommended settings, the renderer (UI) runs with minimal p
 2.  **Preload Bridge**: Only the channels allowed in `preload.js` are exposed to the UI as `window.api`.
 3.  **Delegated File Writes**: The UI never writes files directly; saving is handled by the main process.
 4.  **CSP**: Network requests from the UI are restricted to the local server (127.0.0.1).
+5.  **Sandbox**: The viewer window runs in Electron's sandbox. It does not open other pages inside the window, and opens only the Buy Me a Coffee page as an external link.
+6.  **Refusing browser requests**: The backend refuses requests from web pages opened in your browser, and accepts only requests from the viewer and the Lightroom plug-in on your computer.
 
 ---
 
@@ -38,8 +40,8 @@ Following Electron's recommended settings, the renderer (UI) runs with minimal p
 ### Supported Platforms
 | OS | Package | How to Launch | Current Release |
 | :--- | :--- | :--- | :--- |
-| **Windows 10 / 11 (64bit)** | ZIP (runtimes and ExifTool bundled, no installation) | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.3 Alpha** |
-| **macOS (Apple Silicon)** | `Focus Visualizer.app` | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.3 Alpha** |
+| **Windows 10 / 11 (64bit)** | ZIP (runtimes and ExifTool bundled, no installation) | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.4 Alpha** |
+| **macOS (Apple Silicon)** | `Focus Visualizer.app` | Lightroom: [Library] ＞ [Plug-in Extras] | **v0.9.9.4 Alpha** |
 
 ---
 
@@ -47,7 +49,8 @@ Following Electron's recommended settings, the renderer (UI) runs with minimal p
 
 ### 📸 Focus Visualization & Analysis
 *   **AF Frames**: Displays the AF position recorded by the camera (toggle with `F`).
-*   **Sony Alpha**: In addition to the AF position, displays the type of subject recognition (human, animal, bird, etc.) and the face areas recorded in the maker notes (Tag9401).
+*   **Sony Alpha**: In addition to the AF position, Focus Info shows the AF area and subject recognition settings (human eye, animal, etc.). Face frames are currently turned off while we review their issues.
+*   **Spot Size (Sony Alpha)**: For photos taken with Flexible Spot, Focus Info shows the spot size (XS / S / M / L / XL). It is shown only when the recorded frame matches one of these sizes. With a tracking AF area, it shows "Tracking".
 *   **Canon EOS**: Displays AF areas from Canon EOS R series metadata.
 *   **Focus Peaking**: Detects high-contrast (in-focus) areas in the displayed image and overlays them (`P`). Adjust the threshold with `↑` / `↓`.
 *   **Japanese Path Support**: Includes a correction for garbled (mojibake) paths, so photos in folders with Japanese names can be displayed.

@@ -1,6 +1,6 @@
 # Focus Visualizer - ビューアーUI仕様書 (UI Specification)
 
-**対象バージョン**: v0.9.9.3 Alpha
+**対象バージョン**: v0.9.9.4 Alpha
 
 本ドキュメントは、Viewerアプリ (Electron) のUIコンポーネント構造、視覚的レイアウト、および操作エリアを定義します。
 
@@ -30,8 +30,8 @@
 - **Status Bar (`#status-bar`)**: 左上に配置。一時的な状態メッセージを表示。
 - **Loading Overlay (`#loading-overlay`)**: 中央のスピナーとメッセージ。
 - **Error Message (`#error-message`)**: 読み込み失敗時に赤いアイコンと内容を表示。
-- **Backend Connection Lost (`#backend-dead-overlay`)**: Pythonバックエンドとの接続断絶時に表示。
-- **Canvas (`#canvas-wrapper`)**: 写真を描く層 (`#image-layer`) と、AF枠・顔の枠・ピーキングを描く層 (`#overlay-layer`) の2枚重ね。
+- **Backend Connection Lost (`#backend-dead-overlay`)**: Pythonバックエンドとの接続断絶時に表示。「Restart Backend」ボタンでバックエンドを起動し直し、つながると表示中の写真をすぐに表示し直します。
+- **Canvas (`#canvas-wrapper`)**: 写真を描く層 (`#image-layer`) と、AF枠・ピーキングを描く層 (`#overlay-layer`) の2枚重ね。
 - **Rating Overlay (`#rating-overlay`)**: キャンバスの下部中央に配置。
 
 ---
@@ -53,12 +53,12 @@
 AFの動作結果やターゲットトラッキングの情報を表示します。
 - **Header Structure**: モード表示。
 - **Core Info**: トラッキング状態、AFエリア設定。
-- **Detail Log**: 座標データ等の詳細。
+- **Detail Log**: AF エリアの設定・モード、AF トラッキング、Spot Size（Sony のフレキシブルスポット。XS〜XL、トラッキングのときは Tracking）、Frame Size（記録された AF 枠の大きさ）など。
 
 #### Column 3: 右: コントロールパネル
 ユーザーの操作ボタンと描画トグルを集約。
 - **Action Grid**: 画質モード(Speed/Full)、画質ロック、AF枠(Frame)、ピーキング(Peaking)のトグル。
-- **System Buttons**: EXIF の JSON 書き出し、AF枠入りの画像の保存、閉じる。
+- **System Buttons**: EXIF の書き出し（ExifTool が読めるタグを、クリックでは JSON の `<写真名>_EXIF.json`、Ctrl+クリックではテキストの `<写真名>_EXIF_FULL.txt` として写真の隣に保存）、AF枠入りの画像の保存（前回保存したフォルダから始まる）、閉じる。
 
 ### 2.3 レスポンシブ・ステージ (Layout Stages)
 ウィンドウ幅に応じて自動的に表示要素を最適化します。
@@ -115,5 +115,5 @@ UI（`2.Viewer_App`）のコードベースは、セキュリティ設定（Cont
 ### 4.3 ビジネスロジック層 (`scripts/` ディレクトリ配下)
 UIの描画・通信ロジックは、責務ごとに分割したスクリプト群で構成されています。
 - **SSE接続**: バックエンドの `/stream` に接続し、送られてくる JSON（UIMSメタデータ・AF座標）を受け取ります。画像本体は、バックエンド（127.0.0.1）からURLで読み込みます。
-- **Canvas描画**: 画像のキャンバスへの描画と、正規化座標 (`x, y, w, h`) に基づくAF枠・顔の枠・ピーキングの描画を担当します。
+- **Canvas描画**: 画像のキャンバスへの描画と、正規化座標 (`x, y, w, h`) に基づくAF枠・ピーキングの描画を担当します。
 - **入力とズーム**: キーボード・マウス操作の処理と、Spaceキーでのターゲット・ズーム（3.3）の計算を担当します。
