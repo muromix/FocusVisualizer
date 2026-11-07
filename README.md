@@ -8,7 +8,7 @@ Lightroom Classic の横に、カメラが記録した AF の位置を表示す�
 ![Platforms](https://img.shields.io/badge/platform-Windows%2010%2F11%20%7C%20macOS%20(Apple%20Silicon)-blue)
 ![Lightroom Classic](https://img.shields.io/badge/Lightroom%20Classic-plug--in-31A8FF)
 
-![Lightroom Classic on the left, Focus Visualizer on the right showing the AF frame on the owl's eye](assets/004744.png)
+![Lightroom Classic on the left, Focus Visualizer on the right showing the AF frame on the owl's eye](assets/FocusVisualizer_demo.gif)
 
 *Select a photo in Lightroom Classic (left). Focus Visualizer (right) shows it with the AF frame the camera recorded.*
 
