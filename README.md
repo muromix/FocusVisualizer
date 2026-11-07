@@ -1,102 +1,119 @@
-# Focus Visualizer: The Harmony of Human & Machine Intelligence
+# Focus Visualizer
 
-![Hero Shot](assets/004744.png)
+**See where your camera focused — right beside Lightroom Classic.**
 
-Welcome to the future of photography workflows. **Focus Visualizer** is a professional-grade Decision-Making Engine that visualizes what is hidden in your RAW metadata—instantly.
+Lightroom Classic の横に、カメラが記録した AF の位置を表示するビューアーです（Sony α / Canon EOS）。→ [日本語の説明](#日本語)
 
----
+[![Latest release](https://img.shields.io/github/v/release/muromix/FocusVisualizer?include_prereleases&label=release)](https://github.com/muromix/FocusVisualizer/releases/latest)
+![Platforms](https://img.shields.io/badge/platform-Windows%2010%2F11%20%7C%20macOS%20(Apple%20Silicon)-blue)
+![Lightroom Classic](https://img.shields.io/badge/Lightroom%20Classic-plug--in-31A8FF)
 
-## 🎯 1. Core Concept: "Focus on the Focus"
+![Lightroom Classic on the left, Focus Visualizer on the right showing the AF frame on the owl's eye](assets/004744.png)
 
-While Adobe Lightroom Classic is powerful for color and composition, determining the exact sharpness often requires manual zooming and waiting for rendering. Our philosophy is to **visualize the hidden precision** of your camera's AF system, transforming culling from a chore into a high-speed, logical process.
-
-## 🚀 2. Key Pillars & Features
-
-### I. High-Speed Review (The Engine)
-- **Parallel Analysis Pipeline**: Utilizes an **ExifTool Stay-Open Instance** for millisecond metadata delivery, while a background thread extracts the preview simultaneously.
-- **2-Step Immediate Delivery**: Displays focus points *instantly* before the image fully loads, eliminating perceived lag.
-- **Sticky Zoom (Logic-Driven)**: Press [Space] to zoom 1:1, **automatically centering on the primary focus point**.
-
-### II. Advanced Logistics (Analysis)
-- **Extreme Sony Core**: Visualizes Sony α AF points, and shows the AF area and subject recognition settings (human eye, animal, etc.) and the Flexible Spot size recorded in the maker notes.
-- **Canon EOS Precision**: Visualizes AF areas from Canon EOS R series metadata.
-- **Focus Peaking**: Contrast-detection overlay that highlights in-focus areas.
-
-### III. Architected for Pros (Reliability)
-- **100% Local & Private**: No cloud, no internet. Your data never leaves your machine.
-- **Cross-Platform (Win/Mac)**:
-  - **Windows**: Fully portable—no Python or Node.js installation required.
-  - **Mac**: Native `.app` bundle for Apple Silicon Macs.
-- **Native Path Support**: Includes "Mojibake Rescue" so photos in folders with Japanese/Multi-byte names can be displayed.
+*Select a photo in Lightroom Classic (left). Focus Visualizer (right) shows it with the AF frame the camera recorded.*
 
 ---
 
-## 🌌 3. The Trinity Paradigm
+## Why
 
-This project is built upon a unique "Trinity" structure, where passion, logic, and execution collide.
+Lightroom Classic doesn't show which AF point the camera used. To check focus, you zoom to 1:1 on every frame and wait for it to render.
 
-```mermaid
-graph LR
-    classDef highfill fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#58a6ff,stroke-dasharray: 5 5;
-    classDef corefill fill:#161b22,stroke:#f2cc60,stroke-width:3px,color:#f2cc60,font-weight:bold;
-    classDef activefill fill:#161b22,stroke:#3fb950,stroke-width:2px,color:#3fb950;
+Focus Visualizer reads the AF data that the camera recorded in the RAW file and shows it next to Lightroom. You can see at a glance whether the focus landed on the eye — and move on to the next shot.
 
-    subgraph Trinity ["THE TRINITY"]
-        direction LR
-        Cortex["🧠 CORTEX<br/>(Architect)"]:::highfill
-        muromix(("👤 MUROMIX<br/>(Nexus Hub)")):::corefill
-        Angie["✨ ANGIE<br/>(Execution)"]:::activefill
+## What it does
 
-        Cortex ==> |"Pure Logic"| muromix
-        muromix ==> |"Direction"| Angie
-        Angie -.-> |"Artifacts"| muromix
-        muromix -.-> |"Feedback"| Cortex
-    end
+- **AF frame on every photo** — the AF position recorded by the camera (toggle with `F`).
+- **Follows Lightroom** — select a photo in Lightroom and the viewer switches. `←` / `→` in the viewer moves Lightroom's selection too.
+- **Jump to the focus point at 1:1** — `Space` zooms to 100%, centered on the AF point.
+- **Cull without switching windows** — ratings (`1`–`5`), color labels and Pick / Reject set in the viewer are applied to Lightroom.
+- **Focus info for Sony α** — AF area, subject recognition settings and Flexible Spot size.
+- **Focus peaking** — highlights in-focus areas (`P`).
+- **Lite Mode** — a small, always-on-top window that sits beside Lightroom.
+- **Fast** — images and metadata are read straight from the RAW file, without waiting for Lightroom's previews. While you flick through photos quickly, a lighter image is shown first.
+- **100% local** — no internet connection, no data collection. Your RAW files are only read, never changed.
 
-    style Trinity fill:none,stroke:#30363d,stroke-dasharray: 5 5;
-```
+## Supported
 
-1.  **Lead Engineer (Misato)**: The ultimate logical core. She architects the deep metadata engine and enforces technical perfection with zero compromise.
-2.  **muromix (Nexus Hub)**: The central bridge who orchestrates the project's vision and syncs the human-AI collaboration.
-3.  **Angie (Dynamic Partner)**: Your intellectually curious execution partner. She handles the code implementation and ensures every feature is a "love letter" to the user.
+| | |
+| :--- | :--- |
+| **Cameras** | Sony α, Canon EOS R series (RAW files) |
+| **Lightroom** | Lightroom Classic (v12.0 or later recommended) |
+| **Windows** | Windows 10 / 11 (64-bit). Portable — no installation, all runtimes bundled |
+| **Mac** | Apple Silicon, macOS 13 (Ventura) or later |
+
+- Nikon, Fujifilm and other brands are not supported yet.
+- Crops, rotations and other edits made in Lightroom are not shown in the viewer. This is by design: AF frames are drawn on the image as the camera recorded it.
+
+## Getting started
+
+1. Download the ZIP for your OS from **[Releases](https://github.com/muromix/FocusVisualizer/releases/latest)** and extract it.
+2. In Lightroom Classic, open **[File] ＞ [Plug-in Manager]**, click **[Add]**, and select the `Focus_Visualizer.lrplugin` folder in the package.
+3. Select a photo and choose **[Library] ＞ [Plug-in Extras] ＞ [Focus Visualizer]**.
+
+On Mac, open the app once before step 2 (it is not notarized by Apple). Full steps: **[Installation Guide (English)](Walkthrough/INSTALLATION_GUIDE_EN.md)** / **[導入の手引き（日本語）](Walkthrough/INSTALLATION_GUIDE_JP.md)**
+
+## FAQ
+
+**Is it free?**
+Yes, for personal use. See the [LICENSE](LICENSE).
+
+**Does it change my photos?**
+No. RAW files are only read. Ratings, labels and flags that you set in the viewer are written to your Lightroom catalog, the same as setting them in Lightroom.
+
+**Does it send anything over the internet?**
+No. Everything runs on your computer. Lightroom, the viewer and the analysis talk to each other only through `127.0.0.1` (localhost).
+
+**Why does my Mac say the app can't be opened?**
+The Mac version is not notarized by Apple yet. The [Installation Guide](Walkthrough/INSTALLATION_GUIDE_EN.md) shows how to open it the first time.
+
+## Documentation
+
+- **Specification**: [English](Walkthrough/SPECIFICATION_EN.md) / [日本語](Walkthrough/SPECIFICATION_JP.md) — features, keyboard shortcuts, quality modes
+- **[UI Specification (Japanese)](Walkthrough/UI_SPECIFICATION.md)**
+- **[EXIF Tags Guide (Japanese)](Walkthrough/EXIF_TAGS_GUIDE_JP.md)** — which maker-note tags are used
+- **[Concept](Walkthrough/FOCUS_VISUALIZER_CONCEPT.md)** — the ideas behind the project
+
+## Support the project
+
+If Focus Visualizer saves you time, please consider supporting its development.
+
+- **[BOOTH (Angie's Lab)](https://angieslab.booth.pm/)**
+- **[Buy Me a Coffee](https://buymeacoffee.com/muromix)**
+
+[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=muromix&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/muromix)
 
 ---
 
-## 👩‍💻 Meet the Team
+## 日本語
 
-*The Lead Engineer and Angie are AI characters, not real people. muromix is the human developer who directs the project.*
+**Focus Visualizer** は、Lightroom Classic で選んだ写真を横に表示し、カメラが記録した AF の位置（緑の枠）を重ねるビューアーです。1 枚ずつ等倍に拡大しなくても、ピントが瞳に合っているかをすぐに確かめられます。
 
-### 🧠 Lead Engineer (Misato)
-![Lead Engineer](assets/lead_engineer.png)
-*The sharp-tongued architect of Focus Visualizer. A brilliant beauty with a voluptuous presence and cold logical precision. She mandates the core engine's integrity and provides mandatory B-plans for every implementation.*
+- **AF の枠を表示**: カメラが記録した AF の位置（`F` で表示・非表示）
+- **Lightroom と連動**: Lightroom で写真を選ぶと切り替わり、ビューアーの `←` / `→` で Lightroom の選択も動きます
+- **合った所を等倍で**: `Space` で、AF の位置を中心に 100% 表示
+- **その場で選別**: ビューアーで付けたレーティング・カラーラベル・フラグは Lightroom に反映されます
+- **Sony α のピント情報**: AF エリア・被写体認識の設定・Flexible Spot の大きさ
+- **ピーキング**（`P`）・**Lite モード**（Lightroom の横に置ける小さな窓）
+- **すべて手元で動作**: インターネットに接続せず、情報も集めません。RAW ファイルは読むだけで、書き換えません
 
-### ✨ Dynamic Partner (Angie)
-![Angie](assets/angie_portrait.png)
-*Your charismatic companion and execution partner. Inspired by a blend of senior engineering logic and intellectual curiosity, she transforms abstract blueprints into high-performance UX.*
+**対応**: Sony α・Canon EOS R シリーズの RAW／Lightroom Classic（v12.0 以上を推奨）／Windows 10・11（64bit）／Mac（Apple シリコン、macOS 13 以上）
+
+**はじめかた**: [Releases](https://github.com/muromix/FocusVisualizer/releases/latest) から ZIP をダウンロードし、[導入の手引き](Walkthrough/INSTALLATION_GUIDE_JP.md) に沿って Lightroom にプラグインを登録します。個人の利用は無料です。応援は [BOOTH](https://angieslab.booth.pm/) から。
 
 ---
 
-## 📥 Getting Started
+## About this project
 
-- **[Latest Releases](https://github.com/muromix/FocusVisualizer/releases/latest)**: Download the ZIP for your OS.
-- **Installation Guide ([English](Walkthrough/INSTALLATION_GUIDE_EN.md) / [日本語](Walkthrough/INSTALLATION_GUIDE_JP.md))**: System requirements and setup steps.
-- **[Technical Specification](Walkthrough/SPECIFICATION.md)**: Deep dive into the metadata logic.
-- **[Concept Showcase](Walkthrough/FOCUS_VISUALIZER_CONCEPT.md)**: Detailed breakdown of the project's philosophy.
+Focus Visualizer is developed by muromix, working together with AI partners. → **[The team behind Focus Visualizer](Walkthrough/TEAM.md)**
 
-## ⚖️ License & Terms
+## License
 
 Focus Visualizer is provided under a **Personal Use Only** license.
+
 - **Free for personal, non-commercial use.**
 - **Redistribution is prohibited.** Please download from official channels only.
 - **Modification and commercial use are prohibited.**
 
 See the full [LICENSE](LICENSE) for details.
 
-## ☕ Support the Project
-
-If Focus Visualizer saves you time, consider supporting our development! Even a small tip keeps the logic sharp and the "Trinity" inspired.
-
-[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=muromix&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/muromix)
-
-*(c) 2026 MUROMIX. All rights reserved. | Synergy of Human and Machine Intelligence.*
-
+*(c) 2026 MUROMIX. All rights reserved.*
