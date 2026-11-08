@@ -8,9 +8,9 @@ Lightroom Classic の横に、カメラが記録した AF の位置を表示す�
 ![Platforms](https://img.shields.io/badge/platform-Windows%2010%2F11%20%7C%20macOS%20(Apple%20Silicon)-blue)
 ![Lightroom Classic](https://img.shields.io/badge/Lightroom%20Classic-plug--in-31A8FF)
 
-![Lightroom Classic on the left, Focus Visualizer on the right showing the AF frame on the owl's eye](assets/004744.png)
+![Selecting photos in Lightroom Classic switches Focus Visualizer, which shows the AF frame the camera recorded; Space zooms to it at 100%](assets/demo.gif)
 
-*Select a photo in Lightroom Classic (left). Focus Visualizer (right) shows it with the AF frame the camera recorded.*
+*Select a photo in Lightroom Classic (left) — Focus Visualizer (right) shows the AF frame the camera recorded. Press `Space` to check it at 100%.*
 
 ---
 
@@ -31,6 +31,8 @@ Focus Visualizer reads the AF data that the camera recorded in the RAW file and 
 - **Lite Mode** — a small, always-on-top window that sits beside Lightroom.
 - **Fast** — images and metadata are read straight from the RAW file, without waiting for Lightroom's previews. While you flick through photos quickly, a lighter image is shown first.
 - **100% local** — no internet connection, no data collection. Your RAW files are only read, never changed.
+
+![Lightroom Classic on the left, Focus Visualizer on the right showing the AF frame on the owl's eye](assets/004744.png)
 
 ## Supported
 
